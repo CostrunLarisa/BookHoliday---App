@@ -5,13 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Repository
 public interface FlightRepository extends JpaRepository<Flight,Long> {
     @Query("select f from Flight f where f.date = :startDate or f.date = :endDate")
-    List<Flight> findByPeriod(LocalDate startDate, LocalDate endDate);
+    List<Flight> findByPeriod(Date startDate, Date endDate);
 
     @Query("select f from Flight f where f.destination.destinationName = :destinationName")
     List<Flight> findByDest(String destinationName);

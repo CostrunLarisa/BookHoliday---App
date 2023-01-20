@@ -11,6 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,32 +30,32 @@ class FlightServiceTest {
     private FlightRepository flightRepository;
 
     @Test
-    void findAllByPeriod() {
+    void findAllByPeriod() throws ParseException {
         //prepare
         Destination destination = new Destination("Spain");
         List<Flight> flights = List.of(new Flight(AirlineType.QATAR_AIRLINE,
                         destination,
-                        "08:00", "12:00",LocalDate.parse("2022-01-01"), 200l),
+                        "08:00", "12:00",new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"), 200l),
                 new Flight(AirlineType.QATAR_AIRLINE,
                         destination,
-                        "08:00", "12:00",  LocalDate.parse("2023-02-02"), 200l));
-        when(flightRepository.findByPeriod(LocalDate.parse("2022-01-01"), LocalDate.parse("2023-02-02"))).thenReturn(flights);
+                        "08:00", "12:00", new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"), 200l));
+        when(flightRepository.findByPeriod(new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"), new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"))).thenReturn(flights);
         //act
-        List<Flight> flights1 = flightService.findAllByPeriod("2022-01-01", "2023-02-02");
+        List<Flight> flights1 = flightService.findAllByPeriod(new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"),new SimpleDateFormat("yyyy-mm-dd").parse( "2023-02-02"));
         //assert
         assertEquals(flights, flights1);
     }
 
     @Test
-    void findAllByDest() {
+    void findAllByDest() throws ParseException {
         //prepare
         Destination destination = new Destination("Spain");
         List<Flight> flights = List.of(new Flight(AirlineType.QATAR_AIRLINE,
                         destination,
-                        "08:00", "12:00",LocalDate.parse("2022-01-01"), 200l),
+                        "08:00", "12:00",new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"), 200l),
                 new Flight(AirlineType.QATAR_AIRLINE,
                         destination,
-                        "08:00", "12:00",  LocalDate.parse("2023-02-02"), 200l));
+                        "08:00", "12:00",  new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"), 200l));
         when(flightRepository.findByDest("Spain")).thenReturn(flights);
         //act
         List<Flight> flights1 = flightService.findAllByDest("Spain");
@@ -69,12 +71,12 @@ class FlightServiceTest {
         assertEquals(new ArrayList<>(), flights1);
     }
     @Test
-    void findAllByInexistentPeriod() {
+    void findAllByInexistentPeriod() throws ParseException {
         //prepare
 
-        when(flightRepository.findByPeriod(LocalDate.parse("2022-01-01"), LocalDate.parse("2023-02-02"))).thenReturn(new ArrayList<>());
+        when(flightRepository.findByPeriod(new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"), new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"))).thenReturn(new ArrayList<>());
         //act
-        List<Flight> flights1 = flightService.findAllByPeriod("2022-01-01", "2023-02-02");
+        List<Flight> flights1 = flightService.findAllByPeriod(new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"), new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"));
         //assert
         assertEquals(new ArrayList<>(), flights1);
     }

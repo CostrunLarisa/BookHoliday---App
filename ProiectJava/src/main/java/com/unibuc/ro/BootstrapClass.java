@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
@@ -99,34 +100,34 @@ public class BootstrapClass implements CommandLineRunner {
         if (flights.size() == 0) {
             Flight flight1 = new Flight(AirlineType.QATAR_AIRLINE,
                     destinationService.findByName("Palma de Mallorca"),
-                    "08:00", "12:00", LocalDate.now().plusDays(10), 200l);
+                    "08:00", "12:00", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(10))), 200l);
             Flight flight2 = new Flight(AirlineType.QATAR_AIRLINE,
                     destinationService.findByName("Bucuresti"),
-                    "12:00", "16:00", LocalDate.now().plusDays(15), 180l);
+                    "12:00", "16:00", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(15))), 180l);
             Flight flight3 = new Flight(AirlineType.RYANNAIR,
                     destinationService.findByName("Maldive"),
-                    "13:40", "23:40", LocalDate.now().plusDays(20), 80l);
+                    "13:40", "23:40", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(20))), 80l);
             Flight flight4 = new Flight(AirlineType.RYANNAIR,
                     destinationService.findByName("Bucuresti"),
-                    "10:35", "20:35", LocalDate.now().plusDays(30), 230l);
+                    "10:35", "20:35", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(30))), 230l);
             Flight flight5 = new Flight(AirlineType.WIZZAIR,
                     destinationService.findByName("Cluj-Napoca"),
-                    "13:47", "23:37", LocalDate.now().plusDays(29), 270l);
+                    "13:47", "23:37", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(29))), 270l);
             Flight flight6 = new Flight(AirlineType.RYANNAIR,
                     destinationService.findByName("Dubai"),
-                    "10:35", "20:35", LocalDate.now().plusDays(45), 255l);
+                    "10:35", "20:35", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(45))), 255l);
             Flight flight7 = new Flight(AirlineType.WIZZAIR,
                     destinationService.findByName("Dubai"),
-                    "10:35", "20:35", LocalDate.now().plusDays(45), 330l);
+                    "10:35", "20:35", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(45))), 330l);
             Flight flight8 = new Flight(AirlineType.RYANNAIR,
                     destinationService.findByName("Timisoara"),
-                    "17:15", "03:15", LocalDate.now().plusDays(60), 230l);
+                    "17:15", "03:15", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(60))), 230l);
             Flight flight9 = new Flight(AirlineType.JETBLUE,
                     destinationService.findByName("Bali"),
-                    "17:15", "07:47", LocalDate.now().plusDays(37), 420l);
+                    "17:15", "07:47", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(37))), 420l);
             Flight flight10 = new Flight(AirlineType.HIGHSKY,
                     destinationService.findByName("Bucuresti"),
-                    "23:53", "11:59", LocalDate.now().plusDays(52), 368l);
+                    "23:53", "11:59", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(52))), 368l);
             flightService.save(flight1);
             flightService.save(flight2);
             flightService.save(flight3);

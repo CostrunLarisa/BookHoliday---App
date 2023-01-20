@@ -5,7 +5,8 @@ import com.unibuc.ro.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -18,8 +19,8 @@ public class FlightServiceImpl extends AbstractService<Flight> implements Flight
     }
 
     @Override
-    public List<Flight> findAllByPeriod(String startDate, String endDate) {
-        return flightRepository.findByPeriod(LocalDate.parse(startDate),LocalDate.parse(endDate));
+    public List<Flight> findAllByPeriod(Date startDate, Date endDate) {
+        return flightRepository.findByPeriod(startDate,endDate);
     }
 
     @Override

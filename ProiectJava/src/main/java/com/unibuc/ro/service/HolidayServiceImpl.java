@@ -2,7 +2,7 @@ package com.unibuc.ro.service;
 
 import com.unibuc.ro.exceptions.ClientNotRegisteredException;
 import com.unibuc.ro.exceptions.EntityNotFoundException;
-import com.unibuc.ro.exceptions.HolidayAlreadyCancelled;
+import com.unibuc.ro.exceptions.HolidayAlreadyCancelledException;
 import com.unibuc.ro.model.Accommodation;
 import com.unibuc.ro.model.Flight;
 import com.unibuc.ro.model.Holiday;
@@ -53,7 +53,14 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
     public void cancelHoliday(Long id) {
         Holiday holiday = findById(id);
         if (holiday.isCanceled()) {
-            throw new HolidayAlreadyCancelled();
+            throw new HolidayAlreadyCancelledException();
+        }
+        if (holiday.getAccommodation() != null) {
+            Optional<Accommodation> accommodation = accommodationRepository.findById(holiday.getAccommodation().getId());
+            if (accommodation.isPresent()) {
+                accommodation.get().setCapacity(accommodation.get().getCapacity() + 1);
+                accommodationRepository.save(accommodation.get());
+            }
         }
         holiday.setCanceled(true);
         save(holiday);
@@ -79,6 +86,8 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
         Holiday newHoliday = findById(holidayId);
         Optional<Accommodation> accommodation = accommodationRepository.findById(accommodationId);
         if (accommodation.isPresent()) {
+            accommodation.get().setCapacity(accommodation.get().getCapacity() - 1);
+            accommodationRepository.save(accommodation.get());
             newHoliday.setAccommodation(accommodation.get());
         } else {
             throw new EntityNotFoundException("Selected accommodation does not exist!");
@@ -102,6 +111,15 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
     @Override
     public Holiday deleteAccommodation(Long id) {
         Holiday holiday = findById(id);
+        if (holiday.getAccommodation() != null) {
+            Optional<Accommodation> accommodation = accommodationRepository.findById(holiday.getAccommodation().getId());
+            if (accommodation.isPresent()) {
+                accommodation.get().setCapacity(accommodation.get().getCapacity() + 1);
+                accommodationRepository.save(accommodation.get());
+            }
+        } else {
+            throw new EntityNotFoundException("Accommodation with id " + id +" does not exist!");
+        }
         Holiday newHoliday = Holiday.builder()
                 .firstDay(holiday.getFirstDay())
                 .endDay(holiday.getEndDay())

@@ -2,7 +2,7 @@ package com.unibuc.ro.exceptionHandling;
 
 import com.unibuc.ro.exceptions.ClientNotRegisteredException;
 import com.unibuc.ro.exceptions.EntityNotFoundException;
-import com.unibuc.ro.exceptions.HolidayAlreadyCancelled;
+import com.unibuc.ro.exceptions.HolidayAlreadyCancelledException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -24,8 +24,8 @@ public class GeneralExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 
-    @ExceptionHandler({HolidayAlreadyCancelled.class})
-    public ResponseEntity<String> handleCancelledException(HolidayAlreadyCancelled e) {
+    @ExceptionHandler({HolidayAlreadyCancelledException.class})
+    public ResponseEntity<String> handleCancelledException(HolidayAlreadyCancelledException e) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
 

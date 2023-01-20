@@ -65,9 +65,17 @@ class HolidayServiceImplTest {
     @Test
     void cancelHoliday() {
         Holiday holiday = new Holiday();
+        Destination destination = new Destination("Maldive");
+        Accommodation accommodation = new Accommodation(1l, AccommodationType.HOTEL, "Alegria",
+                180l, "14:00", "10:00", 300,
+                destination);
+        holiday.setAccommodation(accommodation);
         when(holidayRepository.findById(1l)).thenReturn(Optional.of(holiday));
+        when(accommodationRepository.findById(any())).thenReturn(Optional.of(accommodation));
         holidayService.cancelHoliday(1l);
         verify(holidayRepository, times(1)).save(holiday);
+
+        verify(accommodationRepository, times(1)).save(any());
     }
 
     @Test
@@ -83,12 +91,12 @@ class HolidayServiceImplTest {
     }
 
     @Test
-    void addFlight() {
+    void addFlight() throws ParseException {
         Destination destination = new Destination("Maldive");
         Holiday holiday = new Holiday();
         Flight flight = new Flight(AirlineType.QATAR_AIRLINE,
                 destination,
-                "08:00", "12:00", LocalDate.now().plusDays(10), 200l);
+                "08:00", "12:00", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(10))), 200l);
         holiday.setFlight(Set.of(flight));
         when(holidayRepository.findById(1L)).thenReturn(Optional.of(holiday));
         when(flightRepository.findById(2L)).thenReturn(Optional.of(flight));
@@ -137,6 +145,9 @@ class HolidayServiceImplTest {
         Holiday holiday1 = holidayService.addAccommodation(2l, 1l);
         //assert
         assertEquals(accommodation.getName(), holiday1.getAccommodation().getName());
+        verify(accommodationRepository, times(1)).save(any());
+        verify(accommodationRepository, times(1)).findById(any());
+
     }
 
     @Test
@@ -194,19 +205,55 @@ class HolidayServiceImplTest {
 
     @Test
     void deleteAccommodation() {
-        when(holidayRepository.findById(1l)).thenReturn(Optional.of(new Holiday()));
-        Holiday holiday = holidayService.deleteAccommodation(1l);
+        Holiday holiday = new Holiday();
+        Destination destination = new Destination("Maldive");
+        Accommodation accommodation = new Accommodation(1l, AccommodationType.HOTEL, "Alegria",
+                180l, "14:00", "10:00", 300,
+                destination);
+        holiday.setAccommodation(accommodation);
+        when(holidayRepository.findById(1l)).thenReturn(Optional.of(holiday));
+        when(accommodationRepository.findById(any())).thenReturn(Optional.of(accommodation));
+        Holiday holiday2 = holidayService.deleteAccommodation(1l);
         verify(holidayRepository, times(1)).save(any());
+        verify(accommodationRepository, times(1)).save(any());
+        verify(accommodationRepository, times(1)).findById(any());
     }
 
     @Test
-    void deleteFlight() {
+    void deleteInexistentAccommodation() {
+        Holiday holiday = new Holiday();
+        Destination destination = new Destination("Maldive");
+        Accommodation accommodation = new Accommodation(1l, AccommodationType.HOTEL, "Alegria",
+                180l, "14:00", "10:00", 300,
+                destination);
+        holiday.setAccommodation(accommodation);
+        when(holidayRepository.findById(1l)).thenReturn(Optional.of(holiday));
+        when(accommodationRepository.findById(any())).thenReturn(Optional.empty());
+        try {
+            Holiday holiday2 = holidayService.deleteAccommodation(1l);
+        } catch (Exception e) {
+            assertEquals("Accommodation with id 1 not found!", e.getMessage());
+        }
+    }
+    @Test
+    void deleteUnsetAccommodation() {
+        Holiday holiday = new Holiday();
+        when(holidayRepository.findById(1l)).thenReturn(Optional.of(holiday));
+        try {
+            Holiday holiday2 = holidayService.deleteAccommodation(1l);
+        } catch (Exception e) {
+            assertEquals("Accommodation with id 1 does not exist!", e.getMessage());
+        }
+    }
+
+    @Test
+    void deleteFlight() throws ParseException {
         //prepare
         Destination destination = new Destination("Maldive");
         Holiday holiday = new Holiday();
         Flight flight = new Flight(AirlineType.QATAR_AIRLINE,
                 destination,
-                "08:00", "12:00", LocalDate.now().plusDays(10), 200l);
+                "08:00", "12:00", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(10))), 200l);
         holiday.setFlight(Set.of(flight));
         when(holidayRepository.findById(1L)).thenReturn(Optional.of(holiday));
         when(flightRepository.findById(2L)).thenReturn(Optional.of(flight));
@@ -239,32 +286,36 @@ class HolidayServiceImplTest {
         when(holidayRepository.findById(1l)).thenReturn(Optional.empty());
         try {
             holidayService.deleteById(1l);
-        }catch(Exception e) {
-            assertEquals("Holiday with id 1 not found!",e.getMessage());
+        } catch (Exception e) {
+            assertEquals("Holiday with id 1 not found!", e.getMessage());
         }
     }
+
     @Test
     void findById() throws ParseException {
-        when(holidayRepository.findById(1l)).thenReturn(Optional.of(new Holiday(new Destination(),new Client(),new SimpleDateFormat("yyyy-mm-dd").parse("2023-01-01"),new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"))));
+        when(holidayRepository.findById(1l)).thenReturn(Optional.of(new Holiday(new Destination(), new Client(), new SimpleDateFormat("yyyy-mm-dd").parse("2023-01-01"), new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"))));
         Holiday holiday = holidayService.findById(1l);
-        assertEquals(new SimpleDateFormat("yyyy-mm-dd").parse("2023-01-01"),holiday.getFirstDay());
-        assertEquals(new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"),holiday.getEndDay());
+        assertEquals(new SimpleDateFormat("yyyy-mm-dd").parse("2023-01-01"), holiday.getFirstDay());
+        assertEquals(new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"), holiday.getEndDay());
     }
+
     @Test
     void findAll() {
         holidayService.findAll();
-        verify(holidayRepository,times(1)).findAll();
+        verify(holidayRepository, times(1)).findAll();
     }
+
     @Test
     void update() {
         when(holidayRepository.findById(1l)).thenReturn(Optional.of(new Holiday()));
-        holidayService.update(1l,new Holiday());
-        verify(holidayRepository,times(1)).save(any());
+        holidayService.update(1l, new Holiday());
+        verify(holidayRepository, times(1)).save(any());
     }
+
     @Test
     void save() {
         holidayService.save(new Holiday());
-        verify(holidayRepository,times(1)).save(any());
+        verify(holidayRepository, times(1)).save(any());
     }
 
 }

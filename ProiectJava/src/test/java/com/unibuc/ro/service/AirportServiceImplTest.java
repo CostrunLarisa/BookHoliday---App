@@ -8,6 +8,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Optional;
 import java.util.Set;
@@ -24,18 +26,18 @@ class AirportServiceImplTest {
     private AirportRepository airportRepository;
 
     @Test
-    void findByName() {
+    void findByName() throws ParseException {
         //prepare
         Destination destination = new Destination("Maldive");
         Flight flight1 = new Flight(AirlineType.QATAR_AIRLINE,
                 destination,
-                "08:00", "12:00", LocalDate.now().plusDays(10), 200l);
+                "08:00", "12:00", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(10))), 200l);
         Flight flight2 = new Flight(AirlineType.QATAR_AIRLINE,
                 destination,
-                "12:00", "16:00", LocalDate.now().plusDays(15), 180l);
+                "12:00", "16:00", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(15))), 180l);
         Flight flight3 = new Flight(AirlineType.RYANNAIR,
                 destination,
-                "13:40", "23:40", LocalDate.now().plusDays(20), 80l);
+                "13:40", "23:40", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(20))), 80l);
         Airport airport = new Airport("Henri-Coanda", Set.of(flight1, flight2, flight3));
 
         when(airportRepository.findAirportByAirportName("Henri-Coanda")).thenReturn(Optional.of(airport));

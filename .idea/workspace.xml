@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05002100-7be6-472c-90a9-4742c442dd95" name="Changes" comment="" />
+    <list default="true" id="05002100-7be6-472c-90a9-4742c442dd95" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/BootstrapClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/BootstrapClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/FlightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptionHandling/GeneralExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptionHandling/GeneralExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/HolidayAlreadyCancelled.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/HolidayAlreadyCancelledException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/ClientDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Holiday.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Holiday.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/HolidayId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/HolidayRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/HolidayRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/FlightRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/FlightRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/HolidayServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/HolidayServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/AirportServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/AirportServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/FlightServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/FlightServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/HolidayServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/HolidayServiceImplTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,14 +41,21 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -38,12 +70,82 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ProiectJavaApplication">
+    <configuration name="HolidayServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProiectJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unibuc.ro.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unibuc.ro.service" />
+      <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.service.HolidayServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HolidayServiceImplTest.cancelHoliday" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProiectJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unibuc.ro.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unibuc.ro.service" />
+      <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.service.HolidayServiceImplTest" />
+      <option name="METHOD_NAME" value="cancelHoliday" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HolidayServiceImplTest.deleteUnsetAccommodation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProiectJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unibuc.ro.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unibuc.ro.service" />
+      <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.service.HolidayServiceImplTest" />
+      <option name="METHOD_NAME" value="deleteUnsetAccommodation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.unibuc.ro.service in ProiectJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProiectJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unibuc.ro.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unibuc.ro.service" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProiectJavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ProiectJava" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.unibuc.ro.ProiectJavaApplication" />
@@ -51,6 +153,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.com.unibuc.ro.service in ProiectJava" />
+        <item itemvalue="JUnit.HolidayServiceImplTest" />
+        <item itemvalue="JUnit.HolidayServiceImplTest.cancelHoliday" />
+        <item itemvalue="JUnit.HolidayServiceImplTest.deleteUnsetAccommodation" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,11 +172,30 @@
       <updated>1672400292447</updated>
       <workItem from="1672400296482" duration="81000" />
       <workItem from="1672418591162" duration="13000" />
-      <workItem from="1674196844823" duration="716000" />
+      <workItem from="1674196844823" duration="11136000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BookHoliday___App$HolidayServiceImplTest.ic" NAME="HolidayServiceImplTest Coverage Results" MODIFIED="1674232390914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.unibuc.ro.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/BookHoliday___App$com_unibuc_ro_service_in_ProiectJava.ic" NAME="com.unibuc.ro.service in ProiectJava Coverage Results" MODIFIED="1674233114143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.unibuc.ro.service.*</FILTER>
+    </SUITE>
   </component>
 </project>

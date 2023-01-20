@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -29,8 +30,9 @@ public class Holiday {
     @JoinColumn(nullable = false, updatable = false)
     private Destination destination;
 
+    @FutureOrPresent
     private Date firstDay;
-
+    @FutureOrPresent
     private Date endDay;
     @ManyToOne
     private Accommodation accommodation;
