@@ -35,10 +35,9 @@ public class Flight {
     private String departureHour;
     @NotNull
     private String arrivalHour;
+
     @FutureOrPresent(message = "The flight must be in the future or present!")
     @NotNull(message = "Date cannot be null!")
-    @NotEmpty(message = "Date cannot be empty!")
-    @NotBlank(message = "Date cannot be empty!")
     private Date date;
 
     private Long price;

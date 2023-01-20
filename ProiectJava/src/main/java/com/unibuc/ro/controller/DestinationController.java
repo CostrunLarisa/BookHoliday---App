@@ -4,13 +4,16 @@ import com.unibuc.ro.model.Destination;
 import com.unibuc.ro.service.DestinationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
 @RestController
 @RequestMapping("/destination")
+@Validated
 public class DestinationController {
     private final DestinationService destinationService;
 
@@ -20,7 +23,7 @@ public class DestinationController {
     }
 
     @PostMapping
-    public ResponseEntity<Destination> addDestination(@RequestBody Destination destination) {
+    public ResponseEntity<Destination> addDestination(@Valid @RequestBody Destination destination) {
         destinationService.save(destination);
         return ResponseEntity.created(URI.create("/" + destination.getId())).body(destination);
     }
