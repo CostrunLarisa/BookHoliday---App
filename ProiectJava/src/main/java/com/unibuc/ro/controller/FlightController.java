@@ -1,0 +1,42 @@
+package com.unibuc.ro.controller;
+
+import com.unibuc.ro.model.Flight;
+import com.unibuc.ro.service.FlightService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.websocket.server.PathParam;
+import java.net.URI;
+import java.time.LocalDate;
+import java.util.List;
+
+@RestController
+@RequestMapping("/flight")
+public class FlightController {
+    private final FlightService flightService;
+    @Autowired
+    public FlightController(FlightService flightService) {
+        this.flightService = flightService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Flight>> getAllByPeriod(@RequestParam String startDate,@RequestParam String endDate) {
+        return ResponseEntity.ok().body(flightService.findAllByPeriod(startDate,endDate));
+    }
+
+    @GetMapping("/destination/{destinationName}")
+    public ResponseEntity<List<Flight>> getAllByDest(@PathVariable String destinationName) {
+        return ResponseEntity.ok().body(flightService.findAllByDest(destinationName));
+    }
+
+    @PostMapping
+    public ResponseEntity<Flight> addFlight(@RequestBody Flight flight) {
+        flightService.save(flight);
+        return ResponseEntity.created(URI.create("/"+flight.getId())).body(flight);
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Flight> getById(@PathVariable Long id) {
+        return ResponseEntity.ok().body(flightService.findById(id));
+    }
+}
