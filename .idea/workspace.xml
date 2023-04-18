@@ -5,14 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05002100-7be6-472c-90a9-4742c442dd95" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/DestinationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/DestinationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/BootstrapClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/BootstrapClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/ClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/FlightController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptionHandling/GeneralExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptionHandling/GeneralExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Destination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/ClientNotRegisteredException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/ClientNotRegisteredException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Flight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AbstractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AbstractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/FlightRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/FlightRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/ClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/FlightControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/FlightControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/AirportServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/AirportServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/FlightServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/FlightServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/HolidayServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/HolidayServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +35,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -56,27 +70,40 @@
     </option>
   </component>
   <component name="ProjectId" id="2JdFvxNIxVik0NcmX3NJB3kQfEn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
-  <component name="RunManager" selected="JUnit.com.unibuc.ro.service in ProiectJava">
-    <configuration name="HolidayServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.ProiectJavaApplication">
+    <configuration name="FlightControllerTest.getAllByPeriod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProiectJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unibuc.ro.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unibuc.ro.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.controller.FlightControllerTest" />
+      <option name="METHOD_NAME" value="getAllByPeriod" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FlightServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProiectJava" />
       <extension name="coverage">
         <pattern>
@@ -85,40 +112,36 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.unibuc.ro.service" />
-      <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.service.HolidayServiceImplTest" />
+      <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.service.FlightServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HolidayServiceImplTest.cancelHoliday" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="com.unibuc.ro in ProiectJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProiectJava" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.unibuc.ro.service.*" />
+          <option name="PATTERN" value="com.unibuc.ro.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.unibuc.ro.service" />
-      <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.service.HolidayServiceImplTest" />
-      <option name="METHOD_NAME" value="cancelHoliday" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.unibuc.ro" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HolidayServiceImplTest.deleteUnsetAccommodation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="com.unibuc.ro.controller in ProiectJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProiectJava" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.unibuc.ro.service.*" />
+          <option name="PATTERN" value="com.unibuc.ro.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.unibuc.ro.service" />
-      <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.service.HolidayServiceImplTest" />
-      <option name="METHOD_NAME" value="deleteUnsetAccommodation" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.unibuc.ro.controller" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,10 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.com.unibuc.ro in ProiectJava" />
+        <item itemvalue="JUnit.FlightServiceTest" />
+        <item itemvalue="JUnit.com.unibuc.ro.controller in ProiectJava" />
         <item itemvalue="JUnit.com.unibuc.ro.service in ProiectJava" />
-        <item itemvalue="JUnit.HolidayServiceImplTest" />
-        <item itemvalue="JUnit.HolidayServiceImplTest.cancelHoliday" />
-        <item itemvalue="JUnit.HolidayServiceImplTest.deleteUnsetAccommodation" />
+        <item itemvalue="JUnit.FlightControllerTest.getAllByPeriod" />
       </list>
     </recent_temporary>
   </component>
@@ -164,6 +188,7 @@
       <workItem from="1672400296482" duration="81000" />
       <workItem from="1672418591162" duration="13000" />
       <workItem from="1674196844823" duration="16484000" />
+      <workItem from="1681833816863" duration="10977000" />
     </task>
     <servers />
   </component>
@@ -181,11 +206,22 @@
       </map>
     </option>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/FlightController.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BookHoliday___App$HolidayServiceImplTest.ic" NAME="HolidayServiceImplTest Coverage Results" MODIFIED="1674232390914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/BookHoliday___App$com_unibuc_ro_service_in_ProiectJava.ic" NAME="com.unibuc.ro.service in ProiectJava Coverage Results" MODIFIED="1674249364341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.unibuc.ro.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/BookHoliday___App$com_unibuc_ro_service_in_ProiectJava.ic" NAME="com.unibuc.ro.service in ProiectJava Coverage Results" MODIFIED="1674249364341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/BookHoliday___App$HolidayServiceImplTest.ic" NAME="HolidayServiceImplTest Coverage Results" MODIFIED="1674232390914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.unibuc.ro.service.*</FILTER>
     </SUITE>
   </component>

@@ -4,6 +4,7 @@ import com.unibuc.ro.model.Client;
 import com.unibuc.ro.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -23,5 +24,10 @@ public class ClientController {
     @GetMapping("/{id}")
     public ResponseEntity<Client> findById(@PathVariable Long id) {
         return ResponseEntity.ok().body(clientService.findById(id));
+    }
+    @GetMapping("/notFound")
+    public String showErrorPage(@ModelAttribute("errorMessage") String errorMessage, Model model) {
+        model.addAttribute("errorMessage", errorMessage);
+        return "signup";
     }
 }

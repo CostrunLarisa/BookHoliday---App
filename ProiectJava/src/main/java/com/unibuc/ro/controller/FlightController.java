@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.FutureOrPresent;
 import java.net.URI;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Validated
@@ -25,7 +26,7 @@ public class FlightController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Flight>> getAllByPeriod(@FutureOrPresent @RequestParam Date startDate, @FutureOrPresent @RequestParam Date endDate) {
+    public ResponseEntity<List<Flight>> getAllByPeriod(@RequestParam String startDate,@RequestParam String endDate) {
         return ResponseEntity.ok().body(flightService.findAllByPeriod(startDate, endDate));
     }
 

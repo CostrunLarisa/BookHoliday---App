@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -19,8 +22,9 @@ public class FlightServiceImpl extends AbstractService<Flight> implements Flight
     }
 
     @Override
-    public List<Flight> findAllByPeriod(Date startDate, Date endDate) {
-        return flightRepository.findByPeriod(startDate,endDate);
+    public List<Flight> findAllByPeriod(String startDate, String endDate) {
+        return flightRepository.findByPeriod(LocalDate.from(LocalDateTime.parse(startDate + " 00:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))),
+                LocalDate.from(LocalDateTime.parse(endDate + " 00:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))));
     }
 
     @Override

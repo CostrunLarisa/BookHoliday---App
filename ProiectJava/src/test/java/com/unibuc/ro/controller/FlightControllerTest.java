@@ -1,8 +1,9 @@
 package com.unibuc.ro.controller;
 
 import com.google.gson.Gson;
+import com.unibuc.ro.model.AirlineType;
 import com.unibuc.ro.model.Flight;
-import com.unibuc.ro.model.Holiday;
+import com.unibuc.ro.service.DestinationService;
 import com.unibuc.ro.service.FlightService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,19 +12,21 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 
+import java.time.LocalDate;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @ExtendWith(MockitoExtension.class)
 class FlightControllerTest {
     @Mock
     private FlightService flightService;
+    @Mock
+    private DestinationService destinationService;
     private static MockMvc mockMvc;
     @InjectMocks
     private static FlightController flightController;
@@ -46,7 +49,7 @@ class FlightControllerTest {
     @Test
     void addFlight() throws Exception {
         Gson gson = new Gson();
-        mockMvc.perform(post("/flight").content(gson.toJson(new Flight().toString()))
+        mockMvc.perform(post("/flight").content(gson.toJson(new Flight(AirlineType.QATAR_AIRLINE, destinationService.findByName("Palma de Mallorca"), "08:00", "12:00", LocalDate.now().plusDays(10), 200l).toString()))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)).andExpect(status().isBadRequest());
     }

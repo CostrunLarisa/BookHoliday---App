@@ -1,6 +1,5 @@
 package com.unibuc.ro.service;
 
-import com.unibuc.ro.model.Address;
 import com.unibuc.ro.model.AirlineType;
 import com.unibuc.ro.model.Destination;
 import com.unibuc.ro.model.Flight;
@@ -28,6 +27,8 @@ class FlightServiceTest {
     private FlightServiceImpl flightService;
     @Mock
     private FlightRepository flightRepository;
+    @Mock
+    private DestinationService destinationService;
 
     @Test
     void findAllByPeriod() throws ParseException {
@@ -35,13 +36,13 @@ class FlightServiceTest {
         Destination destination = new Destination("Spain");
         List<Flight> flights = List.of(new Flight(AirlineType.QATAR_AIRLINE,
                         destination,
-                        "08:00", "12:00",new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"), 200l),
+                        "08:00", "12:00",LocalDate.of(2022,1,1), 200l),
                 new Flight(AirlineType.QATAR_AIRLINE,
                         destination,
-                        "08:00", "12:00", new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"), 200l));
-        when(flightRepository.findByPeriod(new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"), new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"))).thenReturn(flights);
+                        "08:00", "12:00", LocalDate.of(2023,2,2), 200l));
+        when(flightRepository.findByPeriod(LocalDate.of(2022,1,1), LocalDate.of(2023,2,2))).thenReturn(flights);
         //act
-        List<Flight> flights1 = flightService.findAllByPeriod(new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"),new SimpleDateFormat("yyyy-mm-dd").parse( "2023-02-02"));
+        List<Flight> flights1 = flightService.findAllByPeriod("2022-01-01","2023-02-02");
         //assert
         assertEquals(flights, flights1);
     }
@@ -52,10 +53,10 @@ class FlightServiceTest {
         Destination destination = new Destination("Spain");
         List<Flight> flights = List.of(new Flight(AirlineType.QATAR_AIRLINE,
                         destination,
-                        "08:00", "12:00",new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"), 200l),
+                        "08:00", "12:00", LocalDate.of(2022,1,1), 200l),
                 new Flight(AirlineType.QATAR_AIRLINE,
                         destination,
-                        "08:00", "12:00",  new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"), 200l));
+                        "08:00", "12:00",  LocalDate.of(2023,2,2), 200l));
         when(flightRepository.findByDest("Spain")).thenReturn(flights);
         //act
         List<Flight> flights1 = flightService.findAllByDest("Spain");
@@ -71,24 +72,25 @@ class FlightServiceTest {
         assertEquals(new ArrayList<>(), flights1);
     }
     @Test
-    void findAllByInexistentPeriod() throws ParseException {
+    void findAllByInexistentPeriod() {
         //prepare
 
-        when(flightRepository.findByPeriod(new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"), new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"))).thenReturn(new ArrayList<>());
+        when(flightRepository.findByPeriod(LocalDate.of(2022,1,1), LocalDate.of(2023,2,2))).thenReturn(new ArrayList<>());
         //act
-        List<Flight> flights1 = flightService.findAllByPeriod(new SimpleDateFormat("yyyy-mm-dd").parse("2022-01-01"), new SimpleDateFormat("yyyy-mm-dd").parse("2023-02-02"));
+        List<Flight> flights1 = flightService.findAllByPeriod("2022-01-01", "2023-02-02");
         //assert
         assertEquals(new ArrayList<>(), flights1);
     }
     @Test
     void update() {
-        when(flightRepository.findById(1l)).thenReturn(Optional.of(new Flight()));
-        flightService.update(1l,new Flight());
+        Flight flight = new Flight(AirlineType.QATAR_AIRLINE, destinationService.findByName("Palma de Mallorca"), "08:00", "12:00", LocalDate.now().plusDays(10), 200l);
+        when(flightRepository.findById(1l)).thenReturn(Optional.of(flight));
+        flightService.update(1l,new Flight(AirlineType.QATAR_AIRLINE, destinationService.findByName("Palma de Mallorca"), "08:00", "12:00", LocalDate.now().plusDays(10), 200l));
         verify(flightRepository,times(1)).save(any());
     }
     @Test
     void save() {
-        flightService.save(new Flight());
+        flightService.save(new Flight(AirlineType.QATAR_AIRLINE, destinationService.findByName("Palma de Mallorca"), "08:00", "12:00", LocalDate.now().plusDays(10), 200l));
         verify(flightRepository,times(1)).save(any());
     }
     @Test
@@ -98,7 +100,8 @@ class FlightServiceTest {
     }
     @Test
     void deleteById() {
-        when(flightRepository.findById(1l)).thenReturn(Optional.of(new Flight()));
+        Flight flight = new Flight(AirlineType.QATAR_AIRLINE, destinationService.findByName("Palma de Mallorca"), "08:00", "12:00", LocalDate.now().plusDays(10), 200l);
+        when(flightRepository.findById(1l)).thenReturn(Optional.of(flight));
         flightService.deleteById(1l);
         verify(flightRepository, times(1)).delete(any());
     }

@@ -10,6 +10,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -36,18 +37,21 @@ public class GeneralExceptionHandler {
     }
 
     @ExceptionHandler({ClientNotRegisteredException.class})
-    public ResponseEntity<String> handleNotRegisteredClient(ClientNotRegisteredException e) {
+    public String handleNotRegisteredClient(ClientNotRegisteredException e, Model model) {
 
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost("http://localhost:8080/client");
-        CloseableHttpResponse response;
-        try {
-            response = httpClient.execute(httpPost);
-            response.close();
-            return ResponseEntity.status(HttpStatus.OK).body("Before choosing a destination please register.");
-        } catch (IOException ex) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
-        }
+//        CloseableHttpClient httpClient = HttpClients.createDefault();
+//        HttpPost httpPost = new HttpPost("http://localhost:8080/client");
+//        CloseableHttpResponse response;
+//        try {
+//            response = httpClient.execute(httpPost);
+//            response.close();
+//            return ResponseEntity.status(HttpStatus.OK).body(e.getMessage());
+//        } catch (IOException ex) {
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+//        }
+        model.addAttribute("errorMessage", e.getMessage());
+        return "redirect:/signup";
+
     }
     @ExceptionHandler({MethodArgumentNotValidException.class})
     public ResponseEntity<Map<String,String>> handleValidationException(MethodArgumentNotValidException e) {

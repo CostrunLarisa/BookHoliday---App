@@ -38,7 +38,7 @@ class HolidayServiceImplTest {
         try {
             holidayService.saveByClientAndDest(2l, 1l, new HolidayRequest());
         } catch (Exception e) {
-            assertEquals("This client is not registered on our platform!", e.getMessage());
+            assertEquals("The client with the provided username and password does not exist or is not registered.", e.getMessage());
         }
     }
 
@@ -96,7 +96,7 @@ class HolidayServiceImplTest {
         Holiday holiday = new Holiday();
         Flight flight = new Flight(AirlineType.QATAR_AIRLINE,
                 destination,
-                "08:00", "12:00", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(10))), 200l);
+                "08:00", "12:00", LocalDate.now().plusDays(10), 200l);
         holiday.setFlight(Set.of(flight));
         when(holidayRepository.findById(1L)).thenReturn(Optional.of(holiday));
         when(flightRepository.findById(2L)).thenReturn(Optional.of(flight));
@@ -199,7 +199,7 @@ class HolidayServiceImplTest {
         try {
             holidayService.findAllByClient(1l);
         } catch (Exception e) {
-            assertEquals("This client is not registered on our platform!", e.getMessage());
+            assertEquals("The client with the provided username and password does not exist or is not registered.", e.getMessage());
         }
     }
 
@@ -253,7 +253,7 @@ class HolidayServiceImplTest {
         Holiday holiday = new Holiday();
         Flight flight = new Flight(AirlineType.QATAR_AIRLINE,
                 destination,
-                "08:00", "12:00", new SimpleDateFormat("yyyy-mm-dd").parse(String.valueOf(LocalDate.now().plusDays(10))), 200l);
+                "08:00", "12:00", LocalDate.now().plusDays(10), 200l);
         holiday.setFlight(Set.of(flight));
         when(holidayRepository.findById(1L)).thenReturn(Optional.of(holiday));
         when(flightRepository.findById(2L)).thenReturn(Optional.of(flight));

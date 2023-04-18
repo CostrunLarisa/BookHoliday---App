@@ -7,14 +7,89 @@
       <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="P01845-outgoing-public" />
+      <option name="name" value="P01845-outgoing-public" />
+      <option name="url" value="https://pkgs.dev.azure.com/IngEurCDaaS01/IngOne/_packaging/P01845-outgoing-public/maven/v1" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Maven-Redhat-All" />
+      <option name="name" value="Maven-Redhat-All" />
+      <option name="url" value="https://maven.repository.redhat.com/earlyaccess/all" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Maven-Central" />
+      <option name="name" value="Maven-Central" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Maven-Twitter" />
+      <option name="name" value="Maven-Twitter" />
+      <option name="url" value="https://maven.twttr.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="atlassian-dist" />
+      <option name="name" value="atlassian-dist" />
+      <option name="url" value="https://maven.atlassian.com/3rdparty/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="P01845-incoming-private" />
+      <option name="name" value="P01845-incoming-private" />
+      <option name="url" value="https://pkgs.dev.azure.com/IngEurCDaaS01/_packaging/P01845-incoming-private/maven/v1" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="oss" />
+      <option name="name" value="oss" />
+      <option name="url" value="https://repository.jboss.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Jboss" />
+      <option name="name" value="Jboss" />
+      <option name="url" value="https://repository.jboss.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="P01845-incoming-private-v2" />
+      <option name="name" value="P01845-incoming-private-v2" />
+      <option name="url" value="https://pkgs.dev.azure.com/IngEurCDaaS01/IngOne/_packaging/P01845-incoming-private-v2/maven/v1" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="JbossEA" />
+      <option name="name" value="JbossEA" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/ea/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="P00869-APISDK-releases" />
+      <option name="name" value="P00869-APISDK-releases" />
+      <option name="url" value="https://pkgs.dev.azure.com/INGCDaaS/IngOne/_packaging/P00869-APISDK-releases/Release/maven/v1/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Jboss-thirdparty" />
+      <option name="name" value="Jboss-thirdparty" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/thirdparty-releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Maven-Redhat" />
+      <option name="name" value="Maven-Redhat" />
+      <option name="url" value="https://maven.repository.redhat.com/ga" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="WSO2-dist" />
+      <option name="name" value="WSO2-dist" />
+      <option name="url" value="https://dist.wso2.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="P01845-hb-api-incoming" />
+      <option name="name" value="P01845-hb-api-incoming" />
+      <option name="url" value="https://pkgs.dev.azure.com/IngEurCDaaS01/IngOne/_packaging/P01845-hb-api-incoming/maven/v1" />
     </remote-repository>
   </component>
 </project>

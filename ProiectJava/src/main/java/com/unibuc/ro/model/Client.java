@@ -33,6 +33,9 @@ public class Client {
     @JsonIgnore
     private Set<Holiday> holidays;
 
+    private String password;
+    private String email;
+
     public Client(Long id, String firstName, String lastName, Date birthDate) {
         this.id = id;
         this.firstName = firstName;
