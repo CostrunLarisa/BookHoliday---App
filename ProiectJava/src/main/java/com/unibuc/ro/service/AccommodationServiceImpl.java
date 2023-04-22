@@ -8,6 +8,7 @@ import com.unibuc.ro.repository.DestinationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +41,13 @@ public class AccommodationServiceImpl extends AbstractService<Accommodation> imp
         } else {
             throw new EntityNotFoundException("Destination with name " + destinationName + " does not exist!");
         }
+    }
+
+    @Override
+    public List<Accommodation> findAllByDestinationSorted(String destinationName) {
+        List<Accommodation> accommodations = findAllByDestination(destinationName);
+        accommodations.sort(Comparator.comparing(Accommodation::getPricePerNight));
+        return accommodations;
     }
 
 }

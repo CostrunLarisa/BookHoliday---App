@@ -34,30 +34,30 @@ class DestinationControllerTest {
     @Test
     void addDestination() throws Exception {
         Gson gson = new Gson();
-        mockMvc.perform(post("/destination").content(gson.toJson(new Destination().toString()))
+        mockMvc.perform(post("/destinations").content(gson.toJson(new Destination().toString()))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)).andExpect(status().isCreated());
     }
 
     @Test
     void findAll() throws Exception {
-        mockMvc.perform(get("/destination")).andExpect(status().isOk());
+        mockMvc.perform(get("/destinations")).andExpect(status().isOk());
     }
 
     @Test
     void findById() throws Exception {
-        mockMvc.perform(get("/destination/1")).andExpect(status().isOk());
+        mockMvc.perform(get("/destinations/1")).andExpect(status().isOk());
     }
 
     @Test
     void deleteById() throws Exception {
-        mockMvc.perform(delete("/destination/1")).andExpect(status().isOk());
+        mockMvc.perform(delete("/destinations/1")).andExpect(status().isOk());
     }
 
     @Test
     void updateById() throws Exception {
         Gson gson = new Gson();
-        mockMvc.perform(put("/destination").content(gson.toJson(new Destination().toString()))
+        mockMvc.perform(put("/destinations").content(gson.toJson(new Destination().toString()))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
 

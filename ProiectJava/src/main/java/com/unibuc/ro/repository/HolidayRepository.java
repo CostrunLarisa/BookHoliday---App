@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface HolidayRepository extends JpaRepository<Holiday, Long> {
-    List<Holiday> findAllByClient_Id(Long clientId);
+    List<Holiday> findAllByClientEmail(String email);
 }

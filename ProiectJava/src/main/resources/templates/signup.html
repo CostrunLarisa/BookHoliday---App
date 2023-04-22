@@ -58,14 +58,24 @@
 <body>
 <div class="container">
     <h1>Sign Up</h1>
-    <p th:text="${errorMessage}" style="color: red"></p>
-    <form th:action="@{/signup}" method="post">
+    <p th:if="${errorMessage}" style="color: red" th:text="${errorMessage}"></p>
+    <form th:action="@{/client}" method="post">
+        <label for=" ">First Name:</label>
+        <input type="password" id=" " name="password" th:required="true"/>
+
+        <label for=" ">Last Name:</label>
+        <input type="password" id="  " name="password" th:required="true"/>
+
+        <label for=" ">Birth Date (dd-mm-yyyy):</label>
+        <input type="password" id="   " name="password" th:required="true"/>
+
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" th:required="true"/>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" th:required="true"/>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" th:required="true"/>
+
         <input type="submit" value="Sign Up"/>
     </form>
 </div>

@@ -1,16 +1,19 @@
 package com.unibuc.ro.service;
 
-import com.unibuc.ro.exceptions.ClientNotRegisteredException;
-import com.unibuc.ro.exceptions.EntityNotFoundException;
-import com.unibuc.ro.exceptions.HolidayAlreadyCancelledException;
-import com.unibuc.ro.model.Accommodation;
-import com.unibuc.ro.model.Flight;
-import com.unibuc.ro.model.Holiday;
-import com.unibuc.ro.model.HolidayRequest;
+import com.unibuc.ro.exceptions.*;
+import com.unibuc.ro.model.*;
 import com.unibuc.ro.repository.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.*;
 
 @Service
@@ -20,6 +23,7 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
     private final FlightRepository flightRepository;
     private final AccommodationRepository accommodationRepository;
     private final HolidayRepository holidayRepository;
+    private Logger LOGGER = LoggerFactory.getLogger(HolidayServiceImpl.class);
 
     @Autowired
     public HolidayServiceImpl(HolidayRepository holidayRepository, ClientRepository clientRepository, DestinationRepository destinationRepository, FlightRepository flightRepository, AccommodationRepository accommodationRepository, HolidayRepository holidayRepository1) {
@@ -32,18 +36,25 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
     }
 
     @Override
-    public Holiday saveByClientAndDest(Long destinationId, Long clientId, HolidayRequest holiday) {
-        if (clientRepository.findById(clientId).isEmpty()) {
-            throw new ClientNotRegisteredException();
-        }
-        if (destinationRepository.findById(destinationId).isEmpty()) {
-            throw new EntityNotFoundException("Destination with id " + destinationId + " does not exist!");
+    public Holiday saveByClientAndDest(Long id, HolidayRequest holiday) throws ParseException {
+        Holiday holidayFound = this.findById(id);
+        Date firstDay = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(holiday.getFirstDay() + " 00:00:00");
+        Date endDay = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(holiday.getEndDay() + " 00:00:00");
+
+        Date firstDayComp = new SimpleDateFormat("yyyy-MM-dd").parse(holiday.getFirstDay() );
+        Date endDayComp = new SimpleDateFormat("yyyy-MM-dd").parse(holiday.getEndDay());
+        LOGGER.info(firstDay.toString());
+        LOGGER.info(endDay.toString());
+
+        if (!(firstDayComp.before(endDayComp)) || firstDayComp.before(new Date())) {
+            throw new HolidayCannotBeCancelledException();
         }
         Holiday newHoliday = Holiday.builder()
-                .firstDay(holiday.getFirstDay())
-                .endDay(holiday.getEndDay())
-                .client(clientRepository.findById(clientId).get())
-                .destination(destinationRepository.findById(destinationId).get())
+                .id(id)
+                .firstDay(firstDay)
+                .endDay(endDay)
+                .client(holidayFound.getClient())
+                .destination(holidayFound.getDestination())
                 .build();
         repository.save(newHoliday);
         return newHoliday;
@@ -54,6 +65,9 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
         Holiday holiday = findById(id);
         if (holiday.isCanceled()) {
             throw new HolidayAlreadyCancelledException();
+        }
+        if (holiday.getFirstDay() != null && holiday.getFirstDay().before(new Date())) {
+            throw new HolidayCannotBeCancelledException();
         }
         if (holiday.getAccommodation() != null) {
             Optional<Accommodation> accommodation = accommodationRepository.findById(holiday.getAccommodation().getId());
@@ -86,6 +100,9 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
         Holiday newHoliday = findById(holidayId);
         Optional<Accommodation> accommodation = accommodationRepository.findById(accommodationId);
         if (accommodation.isPresent()) {
+            if (!accommodation.get().getDestination().getDestinationName().equals(newHoliday.getDestination().getDestinationName())) {
+                throw new AccommodationNotMatchingDestException();
+            }
             accommodation.get().setCapacity(accommodation.get().getCapacity() - 1);
             accommodationRepository.save(accommodation.get());
             newHoliday.setAccommodation(accommodation.get());
@@ -101,11 +118,16 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
     }
 
     @Override
-    public List<Holiday> findAllByClient(Long clientId) {
-        if (clientRepository.findById(clientId).isEmpty()) {
+    public List<Holiday> findAllByClient() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String email = null;
+        if (auth != null) {
+            email = auth.getName();
+        }
+        if (clientRepository.findClientByEmail(email).isEmpty()) {
             throw new ClientNotRegisteredException();
         }
-        return holidayRepository.findAllByClient_Id(clientId);
+        return holidayRepository.findAllByClientEmail(email);
     }
 
     @Override
@@ -118,7 +140,7 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
                 accommodationRepository.save(accommodation.get());
             }
         } else {
-            throw new EntityNotFoundException("Accommodation with id " + id +" does not exist!");
+            throw new EntityNotFoundException("The holiday does not have an accommodation!");
         }
         Holiday newHoliday = Holiday.builder()
                 .firstDay(holiday.getFirstDay())
@@ -144,5 +166,26 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
             throw new EntityNotFoundException("Flight with id " + flightId + " is not booked for this holiday!");
         }
         return save(holiday);
+    }
+
+    @Override
+    public Holiday saveByClientAndDest(String destinationName) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Optional<Client> client = Optional.empty();
+        Optional<Destination> destination;
+        Holiday newHoliday = null;
+        if (auth != null) {
+            client = clientRepository.findClientByEmail(auth.getName());
+        }
+        if (!client.isEmpty()) {
+            destination = destinationRepository.findByDestinationName(destinationName);
+        } else {
+            throw new ClientNotRegisteredException();
+        }
+        if (!destination.isEmpty()) {
+            newHoliday = Holiday.builder().client(client.get()).destination(destination.get()).build();
+        }
+
+        return holidayRepository.save(newHoliday);
     }
 }

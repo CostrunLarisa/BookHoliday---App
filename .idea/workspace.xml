@@ -4,27 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05002100-7be6-472c-90a9-4742c442dd95" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="05002100-7be6-472c-90a9-4742c442dd95" name="Changes" comment="Login system added.">
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/DataLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/config/MvcConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/config/SimpleSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/AccommodationNotMatchingDestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/CustomNumberFormatException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/DestinationAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/HolidayCannotBeCancelledException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/InvalidSessionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Authority.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/AuthorityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/JpaUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/application-h2.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/accessDenied.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/accommodationsSorted.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/defaultException.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/destination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/flightsPaginated.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/holiday.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/invalidSession.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/numberFormatException.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/BootstrapClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/BootstrapClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/AccommodationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/AccommodationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/DestinationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/DestinationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/FlightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/HolidayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/HolidayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptionHandling/GeneralExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptionHandling/GeneralExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/ClientNotRegisteredException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/ClientNotRegisteredException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/HolidayRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/HolidayRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/ClientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/FlightRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/FlightRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/HolidayRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/HolidayRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AccommodationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AccommodationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AccommodationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AccommodationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/ClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/DestinationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/DestinationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/HolidayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/HolidayService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/HolidayServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/HolidayServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/AccommodationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/AccommodationControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/DestinationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/DestinationControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/FlightControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/FlightControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/AirportServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/AirportServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/FlightServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/FlightServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/HolidayControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/HolidayControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/HolidayServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/HolidayServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,12 +65,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
@@ -75,19 +111,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;f4faf5d86b99103ddbcfc2cb2af2cd6e&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.unibuc.ro.model" />
+      <recent name="com.unibuc.ro.service" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.ProiectJavaApplication">
-    <configuration name="FlightControllerTest.getAllByPeriod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FlightControllerTest.getAllByDest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProiectJava" />
       <extension name="coverage">
         <pattern>
@@ -97,7 +142,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.unibuc.ro.controller" />
       <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.controller.FlightControllerTest" />
-      <option name="METHOD_NAME" value="getAllByPeriod" />
+      <option name="METHOD_NAME" value="getAllByDest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,6 +163,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HolidayServiceImplTest.deleteFlight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProiectJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unibuc.ro.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unibuc.ro.service" />
+      <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.service.HolidayServiceImplTest" />
+      <option name="METHOD_NAME" value="deleteFlight" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="com.unibuc.ro in ProiectJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProiectJava" />
       <extension name="coverage">
@@ -132,30 +193,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.unibuc.ro.controller in ProiectJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ro in ProiectJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProiectJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.unibuc.ro.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.unibuc.ro.controller" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.unibuc.ro.service in ProiectJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProiectJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.unibuc.ro.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.unibuc.ro.service" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,11 +210,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HolidayServiceImplTest.deleteFlight" />
+        <item itemvalue="JUnit.ro in ProiectJava" />
+        <item itemvalue="JUnit.FlightControllerTest.getAllByDest" />
         <item itemvalue="JUnit.com.unibuc.ro in ProiectJava" />
         <item itemvalue="JUnit.FlightServiceTest" />
-        <item itemvalue="JUnit.com.unibuc.ro.controller in ProiectJava" />
-        <item itemvalue="JUnit.com.unibuc.ro.service in ProiectJava" />
-        <item itemvalue="JUnit.FlightControllerTest.getAllByPeriod" />
       </list>
     </recent_temporary>
   </component>
@@ -188,8 +229,26 @@
       <workItem from="1672400296482" duration="81000" />
       <workItem from="1672418591162" duration="13000" />
       <workItem from="1674196844823" duration="16484000" />
-      <workItem from="1681833816863" duration="10977000" />
+      <workItem from="1681833816863" duration="12203000" />
+      <workItem from="1681914686612" duration="1003000" />
+      <workItem from="1681932812878" duration="10563000" />
+      <workItem from="1681973437525" duration="2002000" />
+      <workItem from="1681988492876" duration="699000" />
+      <workItem from="1681999161051" duration="600000" />
+      <workItem from="1682003392378" duration="445000" />
+      <workItem from="1682003851504" duration="9640000" />
+      <workItem from="1682081353542" duration="33880000" />
+      <workItem from="1682146667780" duration="12794000" />
+      <workItem from="1682161307245" duration="14799000" />
     </task>
+    <task id="LOCAL-00001" summary="Login system added.">
+      <created>1681849568935</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681849568935</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,13 +265,30 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Login system added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Login system added." />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/FlightController.java</url>
-          <line>29</line>
+          <line>36</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/DestinationController.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/DestinationController.java</url>
+          <line>36</line>
+          <properties class="com.unibuc.ro.controller.DestinationController" method="addDestination">
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -224,5 +300,6 @@
     <SUITE FILE_PATH="coverage/BookHoliday___App$HolidayServiceImplTest.ic" NAME="HolidayServiceImplTest Coverage Results" MODIFIED="1674232390914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.unibuc.ro.service.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/BookHoliday___App$ro_in_ProiectJava.ic" NAME="ro in ProiectJava Coverage Results" MODIFIED="1682101332768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

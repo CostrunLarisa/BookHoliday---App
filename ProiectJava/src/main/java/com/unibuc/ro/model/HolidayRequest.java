@@ -12,8 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class HolidayRequest {
-    @FutureOrPresent
-    private Date firstDay;
-    @FutureOrPresent
-    private Date endDay;
+
+    private String firstDay;
+    private String endDay;
 }

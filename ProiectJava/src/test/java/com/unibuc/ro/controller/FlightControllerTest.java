@@ -38,24 +38,24 @@ class FlightControllerTest {
 
     @Test
     void getAllByPeriod() throws Exception {
-        mockMvc.perform(get("/flight?startDate=2023-01-01&endDate=2023-02-02")).andExpect(status().isOk());
+        mockMvc.perform(get("/flights?startDate=2023-01-01&endDate=2023-02-02")).andExpect(status().isOk());
     }
 
     @Test
     void getAllByDest() throws Exception {
-        mockMvc.perform(get("/flight/destination/Maldive")).andExpect(status().isOk());
+        mockMvc.perform(get("/flights/destination/Maldive")).andExpect(status().isOk());
     }
 
     @Test
     void addFlight() throws Exception {
         Gson gson = new Gson();
-        mockMvc.perform(post("/flight").content(gson.toJson(new Flight(AirlineType.QATAR_AIRLINE, destinationService.findByName("Palma de Mallorca"), "08:00", "12:00", LocalDate.now().plusDays(10), 200l).toString()))
+        mockMvc.perform(post("/flights").content(gson.toJson(new Flight(AirlineType.QATAR_AIRLINE, destinationService.findByName("Palma de Mallorca"), "08:00", "12:00", LocalDate.now().plusDays(10), 200l).toString()))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)).andExpect(status().isBadRequest());
     }
 
     @Test
     void getById() throws Exception {
-        mockMvc.perform(get("/flight/1")).andExpect(status().isOk());
+        mockMvc.perform(get("/flights/1")).andExpect(status().isOk());
     }
 }

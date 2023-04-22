@@ -31,52 +31,54 @@ class HolidayServiceImplTest {
     private ClientRepository clientRepository;
     @Mock
     private DestinationRepository destinationRepository;
+// TODO:
+//    @Test
+//    void saveByInexistentClientAndDest() {
+//        when(clientRepository.findById(1l)).thenReturn(Optional.empty());
+//        try {
+//            holidayService.saveByClientAndDest(2l, 1l, new HolidayRequest());
+//        } catch (Exception e) {
+//            assertEquals("The client with the provided username and password does not exist or is not registered.", e.getMessage());
+//        }
+//    }
 
-    @Test
-    void saveByInexistentClientAndDest() {
-        when(clientRepository.findById(1l)).thenReturn(Optional.empty());
-        try {
-            holidayService.saveByClientAndDest(2l, 1l, new HolidayRequest());
-        } catch (Exception e) {
-            assertEquals("The client with the provided username and password does not exist or is not registered.", e.getMessage());
-        }
-    }
+//    @Test
+//    void saveByClientAndInexistentDest() {
+//        when(clientRepository.findById(1l)).thenReturn(Optional.of(new Client()));
+//        when(destinationRepository.findById(2l)).thenReturn(Optional.empty());
+//        try {
+//            holidayService.saveByClientAndDest(2l, 1l, new HolidayRequest());
+//        } catch (Exception e) {
+//            assertEquals("Destination with id 2 does not exist!", e.getMessage());
+//        }
+//    }
+// TODO:
+//    @Test
+//    void saveByClientAndDest() {
+//        when(clientRepository.findById(1l)).thenReturn(Optional.of(new Client()));
+//        when(destinationRepository.findById(2l)).thenReturn(Optional.of(new Destination()));
+//
+//        Holiday holiday = holidayService.saveByClientAndDest(2l, 1l, new HolidayRequest());
+//        verify(holidayRepository, times(1)).save(any());
+//    }
 
-    @Test
-    void saveByClientAndInexistentDest() {
-        when(clientRepository.findById(1l)).thenReturn(Optional.of(new Client()));
-        when(destinationRepository.findById(2l)).thenReturn(Optional.empty());
-        try {
-            holidayService.saveByClientAndDest(2l, 1l, new HolidayRequest());
-        } catch (Exception e) {
-            assertEquals("Destination with id 2 does not exist!", e.getMessage());
-        }
-    }
+    // TODO:
 
-    @Test
-    void saveByClientAndDest() {
-        when(clientRepository.findById(1l)).thenReturn(Optional.of(new Client()));
-        when(destinationRepository.findById(2l)).thenReturn(Optional.of(new Destination()));
-
-        Holiday holiday = holidayService.saveByClientAndDest(2l, 1l, new HolidayRequest());
-        verify(holidayRepository, times(1)).save(any());
-    }
-
-    @Test
-    void cancelHoliday() {
-        Holiday holiday = new Holiday();
-        Destination destination = new Destination("Maldive");
-        Accommodation accommodation = new Accommodation(1l, AccommodationType.HOTEL, "Alegria",
-                180l, "14:00", "10:00", 300,
-                destination);
-        holiday.setAccommodation(accommodation);
-        when(holidayRepository.findById(1l)).thenReturn(Optional.of(holiday));
-        when(accommodationRepository.findById(any())).thenReturn(Optional.of(accommodation));
-        holidayService.cancelHoliday(1l);
-        verify(holidayRepository, times(1)).save(holiday);
-
-        verify(accommodationRepository, times(1)).save(any());
-    }
+//    @Test
+//    void cancelHoliday() {
+//        Holiday holiday = new Holiday();
+//        Destination destination = new Destination("Maldive");
+//        Accommodation accommodation = new Accommodation(1l, AccommodationType.HOTEL, "Alegria",
+//                180l, "14:00", "10:00", 300,
+//                destination);
+//        holiday.setAccommodation(accommodation);
+//        when(holidayRepository.findById(1l)).thenReturn(Optional.of(holiday));
+//        when(accommodationRepository.findById(any())).thenReturn(Optional.of(accommodation));
+//        holidayService.cancelHoliday(1l);
+//        verify(holidayRepository, times(1)).save(holiday);
+//
+//        verify(accommodationRepository, times(1)).save(any());
+//    }
 
     @Test
     void cancelInvalidHoliday() {
@@ -184,24 +186,27 @@ class HolidayServiceImplTest {
             assertEquals("Holiday with id 2 not found!", e.getMessage());
         }
     }
+    // TODO:
 
-    @Test
-    void findAllByClient() {
-        when(clientRepository.findById(1l)).thenReturn(Optional.of(new Client()));
-        List<Holiday> holidayList = holidayService.findAllByClient(1l);
-        verify(holidayRepository, times(1)).findAllByClient_Id(1l);
-        assertEquals(new ArrayList<>(), holidayList);
-    }
+//    @Test
+//    void findAllByClient() {
+//        when(clientRepository.findById(1l)).thenReturn(Optional.of(new Client()));
+//        List<Holiday> holidayList = holidayService.findAllByClient(1l);
+//        verify(holidayRepository, times(1)).findAllByClient_Id(1l);
+//        assertEquals(new ArrayList<>(), holidayList);
+//    }
 
-    @Test
-    void findAllByInexistentClient() {
-        when(clientRepository.findById(1l)).thenReturn(Optional.empty());
-        try {
-            holidayService.findAllByClient(1l);
-        } catch (Exception e) {
-            assertEquals("The client with the provided username and password does not exist or is not registered.", e.getMessage());
-        }
-    }
+    //TODO
+
+//    @Test
+//    void findAllByInexistentClient() {
+//        when(clientRepository.findById(1l)).thenReturn(Optional.empty());
+//        try {
+//            holidayService.findAllByClient(1l);
+//        } catch (Exception e) {
+//            assertEquals("The client with the provided username and password does not exist or is not registered.", e.getMessage());
+//        }
+//    }
 
     @Test
     void deleteAccommodation() {

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/font-awesome/6.2.0/css/all.min.css"/>
+    <script src="/webjars/font-awesome/6.2.0/js/all.min.js"></script>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            padding: 10rem;
+        }
+
+        .navbar {
+            background-color: rgb(2 149 36 / 80%);
+            border-color: #44c767;
+        }
+
+        .navbar-brand {
+            color: #fff;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: #ffffff;
+        }
+
+        .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+            color: #746565;
+            background-color: transparent
+        }
+
+        .navbar-nav > li > a {
+            color: #fff;
+        }
+
+        .hero-unit {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            padding: 10rem;
+        }
+
+        .footer {
+            background-color: #44c767;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .navbar {
+                position: static;
+            }
+
+            .hero-unit {
+                margin-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/home">Booking App</a>
+                <a class="navbar-brand" href="/destinations/list">Destinations</a>
+                <a class="navbar-brand" href="/holidays">My Holidays</a>
+                <a class="navbar-brand" href="/logout">Log out</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container" style="margin-top: 60px;">
+    <div class="hero-unit">
+        <h1>Our Destinations</h1>
+        <p>Here is a list with our available destinations!</p>
+        <div class="container" style="margin-top: 80px">
+            <p th:if="${successMessage}" style="color: #05818d" th:text="${successMessage}"></p>
+            <p th:if="${errorMessage}" style="color: red" th:text="${errorMessage}"></p>
+            <table class="table table-hover" style="width: 82%">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Accommodations</th>
+                    <th>Flights</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tr th:each="destination, stat : ${destinations}"
+                    th:class="${stat.odd}? 'table-light':'table-dark'">
+                    <td th:text="${destination.id}">1</td>
+                    <td th:text="${destination.destinationName}">Product 1</td>
+                    <td><a th:href="@{'/accommodations/priceList/' + ${destination.destinationName}}">See Accommodations</a></td>
+                    <td><a th:href="@{'/flights/flightsPaginated/' + ${destination.destinationName}}">See Flights</a></td>
+                    <!--                    <td th:text="${product.reservePrice}">Best offer</td>-->
+                    <!--                    <td><a href="#" th:href="@{'/products/' + ${product.id}}"><i class="fa-solid fa-circle-info"></i></a></td>-->
+                    <td>
+                        <form th:action="@{/holidays/add(session = ${#httpSession.id}, destinationName=${destination.destinationName})}" method="post">
+                            <button type="submit" class="btn btn-success">Book a Holiday</button>
+                        </form>
+                    </td>
+<!--                    <form method="post" action="@{'/holiday/add?destinationName='${destination.destinationName}}">-->
+<!--                        <input type="hidden" name="destinationName" th:value="${destination.destinationName}" />-->
+<!--                        <button type="submit">Add Holiday</button>-->
+<!--                    </form>-->
+
+                    <!--                                        <td><a sec:authorize="hasRole('ADMIN')"  href="#" th:href="@{'/destinations/add' + ${product.id}}"><i class="fa-solid fa-pen"></i></a></td>
+                                          <td><a href="#" th:href="@{'/products/delete/' + ${product.id}}"><i class="fa-solid fa-trash"></i></a></td>-->
+                </tr>
+            </table>
+            <form th:action="@{/destinations/add}" method="post" sec:authorize="hasRole('ADMIN')" style="width: 30%">
+                <div class="form-group">
+                    <label for="destinationName">Destination name:</label>
+                    <input type="text" class="form-control" id="destinationName" name="destinationName" required>
+                </div>
+                <button class="btn btn-success" type="submit">Add New Destination</button>
+            </form>
+        </div>
+        <!--        <form th:action="@{/login}" method="post">-->
+        <!--            <div class="form-group">-->
+        <!--                <label for="username">Username:</label>-->
+        <!--                <input type="text" class="form-control" id="username" name="username" required>-->
+        <!--            </div>-->
+        <!--            <div class="form-group">-->
+        <!--                <label for="password">Password:</label>-->
+        <!--                <input type="password" class="form-control" id="password" name="password" required>-->
+        <!--            </div>-->
+        <!--            <button type="submit" class="btn btn-success">Log in</button>-->
+        <!--            <span th:if="${param.error}" class="text-danger">Invalid username or password</span>-->
+        <!--        </form>-->
+    </div>
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

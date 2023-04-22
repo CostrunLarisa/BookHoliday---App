@@ -3,10 +3,11 @@ package com.unibuc.ro.service;
 import com.unibuc.ro.model.Holiday;
 import com.unibuc.ro.model.HolidayRequest;
 
+import java.text.ParseException;
 import java.util.List;
 
 public interface HolidayService {
-    Holiday saveByClientAndDest(Long destinationId, Long clientId, HolidayRequest holiday);
+    Holiday saveByClientAndDest(Long id, HolidayRequest holiday) throws ParseException;
 
     void cancelHoliday(Long id);
 
@@ -16,9 +17,11 @@ public interface HolidayService {
 
     Holiday findById(Long id);
 
-    List<Holiday> findAllByClient(Long clientId);
+    List<Holiday> findAllByClient();
 
     Holiday deleteAccommodation(Long id);
 
     Holiday deleteFlight(Long id, Long flightId);
+
+    Holiday saveByClientAndDest(String destinationName);
 }

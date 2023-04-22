@@ -8,4 +8,6 @@ public interface AccommodationService extends CrudService<Accommodation> {
     Accommodation findByName(String name);
 
     List<Accommodation> findAllByDestination(String destinationName);
+
+    List<Accommodation> findAllByDestinationSorted(String destinationName);
 }

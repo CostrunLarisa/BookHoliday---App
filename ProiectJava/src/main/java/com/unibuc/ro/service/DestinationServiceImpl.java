@@ -1,5 +1,6 @@
 package com.unibuc.ro.service;
 
+import com.unibuc.ro.exceptions.DestinationAlreadyExistsException;
 import com.unibuc.ro.exceptions.EntityNotFoundException;
 import com.unibuc.ro.model.Destination;
 import com.unibuc.ro.repository.DestinationRepository;
@@ -12,6 +13,7 @@ import java.util.Optional;
 @Service
 public class DestinationServiceImpl extends AbstractService<Destination> implements DestinationService {
     private final DestinationRepository destinationRepository;
+
     @Autowired
     public DestinationServiceImpl(DestinationRepository repository) {
         super(repository);
@@ -19,10 +21,21 @@ public class DestinationServiceImpl extends AbstractService<Destination> impleme
     }
 
     @Override
+    public Destination save(Destination destination) {
+        Destination destinationFound;
+        try {
+            destinationFound = findByName(destination.getDestinationName());
+            throw new DestinationAlreadyExistsException();
+        } catch (EntityNotFoundException e) {
+            return super.save(destination);
+        }
+    }
+
+    @Override
     public Destination findByName(String destinationName) {
         Optional<Destination> destination = destinationRepository.findByDestinationName(destinationName);
-        if(destination.isPresent()) {
-            return  destination.get();
+        if (destination.isPresent()) {
+            return destination.get();
         } else {
             throw new EntityNotFoundException("Destination with name " + destinationName + " does not exist!");
         }

@@ -3,6 +3,8 @@ package com.unibuc.ro.service;
 import com.unibuc.ro.model.Flight;
 import com.unibuc.ro.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
@@ -31,4 +33,10 @@ public class FlightServiceImpl extends AbstractService<Flight> implements Flight
     public List<Flight> findAllByDest(String destinationName) {
         return flightRepository.findByDest(destinationName);
     }
+    @Override
+    public Page<Flight> findPaginated(Pageable pageable, String destinationName) {
+        Page<Flight> flightPage = flightRepository.findAllPaginatedByDest(pageable, destinationName);
+        return flightPage;
+    }
+
 }

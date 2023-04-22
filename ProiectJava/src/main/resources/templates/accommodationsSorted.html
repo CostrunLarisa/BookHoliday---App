@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Flights List</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/webjars/font-awesome/6.2.0/css/all.min.css"/>
+  <script src="/webjars/font-awesome/6.2.0/js/all.min.js"></script>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      padding:10rem;
+    }
+    .navbar {
+      background-color: rgb(2 149 36 / 80%);
+      border-color: #44c767;
+    }
+    .navbar-brand {
+      color: #fff;
+    }
+    .navbar-inverse .navbar-brand {
+      color: #ffffff;
+    }
+    .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+      color: #746565;
+      background-color: transparent
+    }
+    .navbar-nav > li > a {
+      color: #fff;
+    }
+    .hero-unit {
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+      color: #155724;
+      padding: 10rem;
+    }
+    .footer {
+      background-color: #44c767;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+    @media only screen and (max-width: 767px) {
+      .navbar {
+        position: static;
+      }
+      .hero-unit {
+        margin-top: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/home">Booking App</a>
+        <a class="navbar-brand" href="/destinations/list">Destinations</a>
+        <a class="navbar-brand" href="/holidays">My Holidays</a>
+        <a class="navbar-brand" href="/logout">Log out</a>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container" style="margin-top: 60px;">
+  <div class="hero-unit">
+    <h1>Accommodations</h1>
+    <p>Here are the accommodations we provide sorted by price!</p>
+    <div class="container" style="width: 80%; margin-top:60px">
+
+
+      <table class="table table-hover ">
+        <thead class="thead-inverse">
+        <tr>
+          <th>ID</th>
+          <th>Accommodation Type</th>
+          <th>Name</th>
+          <th>Capacity</th>
+          <th>Check-in Hour</th>
+          <th>Check-out Hour</th>
+          <th>Price per night</th>
+        </tr>
+        </thead>
+
+
+        <tr th:each="accommodation : ${accommodations}">
+          <td th:text="${accommodation.id}"></td>
+          <td th:text="${accommodation.accomodationType}"></td>
+          <td th:text="${accommodation.name}"></td>
+          <td th:text="${accommodation.capacity}"></td>
+          <td th:text="${accommodation.checkInHour}"></td>
+          <td th:text="${accommodation.checkOutHour}">
+          <td th:text="${accommodation.pricePerNight}"></td>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

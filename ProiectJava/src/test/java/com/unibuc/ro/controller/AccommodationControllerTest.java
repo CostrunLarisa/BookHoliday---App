@@ -35,18 +35,18 @@ class AccommodationControllerTest {
 
     @Test
     void getAllByDest() throws Exception {
-        mockMvc.perform(get("/accommodation/destination/Maldive")).andExpect(status().isOk());
+        mockMvc.perform(get("/accommodations/destination/Maldive")).andExpect(status().isOk());
     }
 
     @Test
     void getById() throws Exception {
-        mockMvc.perform(get("/accommodation/1")).andExpect(status().isOk());
+        mockMvc.perform(get("/accommodations/1")).andExpect(status().isOk());
     }
 
     @Test
     void addAccommodation() throws Exception {
         Gson gson = new Gson();
-        mockMvc.perform(post("/accommodation").content(gson.toJson(new Accommodation().toString()))
+        mockMvc.perform(post("/accommodations").content(gson.toJson(new Accommodation().toString()))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)).andExpect(status().isBadRequest());
     }
