@@ -65,6 +65,9 @@ public class HolidayController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/holidays");
         modelAndView.addObject("successMessage", "Holiday was cancelled!");
+        Holiday holiday = holidayService.findById(id);
+        LOGGER.info(String.valueOf(holiday.isCanceled()));
+        LOGGER.info(String.valueOf(holiday.getFirstDay()));
         holidayService.cancelHoliday(id);
         return modelAndView;
     }

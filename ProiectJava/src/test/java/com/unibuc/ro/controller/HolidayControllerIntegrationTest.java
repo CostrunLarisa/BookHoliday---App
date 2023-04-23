@@ -16,6 +16,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashSet;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -89,14 +91,16 @@ class HolidayControllerIntegrationTest {
 
     @Test
     void testCancelHoliday() throws Exception {
-        mockMvc.perform(post("/holidays/cancellation/1", new HolidayRequest("2023-07-21", "2023-09-09")))
+        Holiday holiday1 = new Holiday();
+        when(holidayService.findById(any())).thenReturn(holiday1);
+        mockMvc.perform(post("/holidays/cancellation").param("id","1"))
                 .andExpect(status().isFound())
                 .andExpect(view().name("redirect:/holidays"));
     }
 
     @Test
     void testAddAccommodation() throws Exception {
-        mockMvc.perform(post("/holidays/1/accommodation"))
+        mockMvc.perform(post("/holidays/1/accommodation","28"))
                 .andExpect(status().isFound())
                 .andExpect(view().name("redirect:/holidays"));
     }
