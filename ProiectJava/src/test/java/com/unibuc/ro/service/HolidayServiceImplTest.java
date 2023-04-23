@@ -2,15 +2,12 @@ package com.unibuc.ro.service;
 
 import com.unibuc.ro.model.*;
 import com.unibuc.ro.repository.*;
-import com.unibuc.ro.repository.security.ClientRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,16 +28,7 @@ class HolidayServiceImplTest {
     private AccommodationRepository accommodationRepository;
     @Mock
     private FlightRepository flightRepository;
-    @Mock
-    private ClientRepository clientRepository;
-    @Mock
-    private DestinationRepository destinationRepository;
-    @Mock
-    private Authentication authentication;
-    @Mock
-    private SecurityContextHolder securityContextHolder;
-    @Mock
-    private SecurityContext securityContext;
+
     @Test
     void updateByIdAndPastDate() {
         Holiday mockHoliday = new Holiday();
@@ -68,17 +56,6 @@ class HolidayServiceImplTest {
             assertEquals("Holiday has the first day in the past so it cannot be modified, added or cancelled!", e.getMessage());
         }
     }
-
-    //    @Test
-//    void saveByClientAndInexistentDest() {
-//        when(clientRepository.findById(1l)).thenReturn(Optional.of(new Client()));
-//        when(destinationRepository.findById(2l)).thenReturn(Optional.empty());
-//        try {
-//            holidayService.saveByClientAndDest(2l, 1l, new HolidayRequest());
-//        } catch (Exception e) {
-//            assertEquals("Destination with id 2 does not exist!", e.getMessage());
-//        }
-//    }
     @Test
     void saveByClientAndDestClientNotRegistered() {
         try {
@@ -87,18 +64,6 @@ class HolidayServiceImplTest {
             assertEquals("The client with the provided username and password does not exist or is not registered.", e.getMessage());
         }
     }
-
-//    @Test
-//    void saveByClientAndDestClient() {
-//       // when(securityContextHolder.getContext()).thenReturn(securityContext);
-//        when(securityContext.getAuthentication()).thenReturn(authentication);
-//        when(clientRepository.findClientByEmail(anyString())).thenReturn(Optional.of(new Client()));
-//       // when(destinationRepository.findById(2l)).thenReturn(Optional.of(new Destination()));
-//
-//        Holiday holiday = holidayService.saveByClientAndDest("Maldive");
-//        verify(holidayRepository, times(1)).save(any());
-//    }
-
     @Test
     void cancelHoliday() {
         Holiday holiday = new Holiday();
