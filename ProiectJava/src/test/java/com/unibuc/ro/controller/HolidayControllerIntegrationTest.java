@@ -92,8 +92,9 @@ class HolidayControllerIntegrationTest {
     @Test
     void testCancelHoliday() throws Exception {
         Holiday holiday1 = new Holiday();
+        holiday1.setId(1L);
         when(holidayService.findById(any())).thenReturn(holiday1);
-        mockMvc.perform(post("/holidays/cancellation").param("id","1"))
+        mockMvc.perform(post("/holidays/cancellation/1"))
                 .andExpect(status().isFound())
                 .andExpect(view().name("redirect:/holidays"));
     }
