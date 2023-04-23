@@ -1,4 +1,4 @@
-package com.unibuc.ro.config;
+package com.unibuc.ro.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

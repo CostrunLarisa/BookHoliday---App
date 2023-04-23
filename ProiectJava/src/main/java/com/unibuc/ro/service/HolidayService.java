@@ -7,7 +7,6 @@ import java.text.ParseException;
 import java.util.List;
 
 public interface HolidayService {
-    Holiday saveByClientAndDest(Long id, HolidayRequest holiday) throws ParseException;
 
     void cancelHoliday(Long id);
 
@@ -24,4 +23,5 @@ public interface HolidayService {
     Holiday deleteFlight(Long id, Long flightId);
 
     Holiday saveByClientAndDest(String destinationName);
+    Holiday updateById(Long id, HolidayRequest holidayRequest) throws ParseException;
 }

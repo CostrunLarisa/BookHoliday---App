@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,10 +30,17 @@ public class LoginController {
     }
 
     @GetMapping("/")
-    public String login() {
+    public String login(@RequestParam(value = "errorMessage", required = false) String error,
+                        @RequestParam(value = "successMessage", required = false) String success) {
+        ModelAndView modelAndView = new ModelAndView();
+        if (error != null) {
+            modelAndView.addObject("errorMessage", error);
+        }
+        if (success != null) {
+            modelAndView.addObject("successMessage", success);
+        }
         return "login.html";
     }
-
     @GetMapping("/home")
     public String getHomePage () {
         return "home.html";
@@ -44,9 +52,12 @@ public class LoginController {
         return ResponseEntity.ok().body("User has successfully logged in!");
     }
     @GetMapping("/signup")
-    public String signup(Model model, @RequestParam(value = "error", required = false) String error) {
+    public String signup(Model model,
+                         @RequestParam(value = "error", required = false) String error) {
         if (error != null && error.equals("true")) {
             model.addAttribute("errorMessage", "The client is not registered.");
+        } else if (error != null) {
+            model.addAttribute("errorMessage", error);
         }
         return "signup.html";
     }
@@ -58,8 +69,8 @@ public class LoginController {
         }
         return "redirect:/";
     }
-    @GetMapping("/access_denied")
-    public String accessDeniedPage(){ return "accessDenied"; }
-    @GetMapping("/invalidSession")
-    public String invalidSessionPage(){ return "invalidSession"; }
+//    @PostMapping("/accessDenied")
+//    public String accessDeniedPage(){ return "accessDenied"; }
+//    @GetMapping("/invalidSession")
+//    public String invalidSessionPage(){ return "invalidSession"; }
 }

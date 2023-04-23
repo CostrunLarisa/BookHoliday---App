@@ -1,19 +1,16 @@
-package com.unibuc.ro.config;
+package com.unibuc.ro.config.security;
 
-import com.unibuc.ro.service.JpaUserDetailsService;
+import com.unibuc.ro.service.security.JpaUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -35,7 +32,8 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((requests) -> requests
-                        .antMatchers("/signup","/").permitAll()
+                        .antMatchers("/signup","/","/client").permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/destinations/add")).hasRole("ADMIN")
                         .anyRequest().authenticated()
                 ).userDetailsService(userDetailsService)
                 .formLogin()
@@ -45,7 +43,7 @@ public class WebSecurityConfig {
                 .and()
                 .logout((logout) -> logout.logoutUrl("/logout").permitAll())
                 .exceptionHandling()
-                .accessDeniedPage("/access_denied")
+                .accessDeniedPage("/accessDenied")
                 .and()
                 .httpBasic(withDefaults());
 

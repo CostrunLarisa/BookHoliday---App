@@ -5,20 +5,15 @@ import com.unibuc.ro.model.Holiday;
 import com.unibuc.ro.model.HolidayRequest;
 import com.unibuc.ro.service.HolidayService;
 
-import io.swagger.models.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-import javax.websocket.server.PathParam;
-import java.net.URI;
 import java.text.ParseException;
 import java.util.List;
 
@@ -39,7 +34,7 @@ public class HolidayController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/holidays");
 
-        holidayService.saveByClientAndDest(id, holiday);
+        holidayService.updateById(id, holiday);
         LOGGER.info("Period has been set!");
         modelAndView.addObject("successMessage", "Period has been set!");
         return modelAndView;

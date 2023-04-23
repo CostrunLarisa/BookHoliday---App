@@ -10,9 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.text.ParseException;
 import java.util.HashMap;
@@ -48,9 +50,10 @@ public class GeneralExceptionHandler {
         return "redirect:/invalidSession";
 
     }
-    @ExceptionHandler({ClientNotRegisteredException.class})
-    public String handleNotRegisteredClient(ClientNotRegisteredException e, Model model) {
-        model.addAttribute("errorMessage", e.getMessage());
+    @ExceptionHandler({ClientNotRegisteredException.class, ClientAlreadyRegisteredException.class})
+    public String handleNotRegisteredClient(Exception e, Model model) {
+        model.addAttribute("error", e.getMessage());
+        LOGGER.info(e.getMessage());
         return "redirect:/signup";
 
     }

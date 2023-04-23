@@ -2,8 +2,8 @@ package com.unibuc.ro;
 
 import com.unibuc.ro.model.Authority;
 import com.unibuc.ro.model.Client;
-import com.unibuc.ro.repository.AuthorityRepository;
-import com.unibuc.ro.repository.ClientRepository;
+import com.unibuc.ro.repository.security.AuthorityRepository;
+import com.unibuc.ro.repository.security.ClientRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;

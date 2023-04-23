@@ -16,7 +16,7 @@ import static org.mockito.Mockito.*;
 
 
 @ExtendWith(MockitoExtension.class)
-class DestinationServiceTest {
+class DestinationServiceImplTest {
 
     @InjectMocks
     private DestinationServiceImpl destinationService;
@@ -39,9 +39,7 @@ class DestinationServiceTest {
     @Test
     void saveHappyFlowWithAccomodations() {
         //prepare
-        // Client client = new Client(1l,"Costrun","Larisa", LocalDate.now());
         Destination destination = new Destination(5l, "Hawaii", new HashSet<>());
-        // Holiday holiday = new Holiday(destination,client, Date.valueOf("2023-09-22"),Date.valueOf("2023-09-25"));
         Accommodation accommodation = new Accommodation(1l, AccommodationType.HOTEL, "La vie", 123l, "12:00", "10:00", 100, destination);
         destination.getAccommodations().add(accommodation);
 

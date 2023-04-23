@@ -2,26 +2,27 @@ package com.unibuc.ro.controller;
 
 import com.google.gson.Gson;
 import com.unibuc.ro.model.Accommodation;
-import com.unibuc.ro.model.Client;
 import com.unibuc.ro.service.AccommodationService;
-import com.unibuc.ro.service.ClientService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @ExtendWith(MockitoExtension.class)
-class AccommodationControllerTest {
+@SpringBootTest
+class AccommodationControllerIntegrationTest {
     @InjectMocks
     private static AccommodationController accommodationController;
     @Mock
@@ -49,5 +50,13 @@ class AccommodationControllerTest {
         mockMvc.perform(post("/accommodations").content(gson.toJson(new Accommodation().toString()))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)).andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void getAllSortedByPrice() throws Exception {
+        mockMvc.perform(get("/accommodations/priceList/Maldive"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("accommodationsSorted"));
+
     }
 }

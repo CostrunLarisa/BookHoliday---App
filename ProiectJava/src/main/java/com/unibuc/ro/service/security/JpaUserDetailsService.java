@@ -1,8 +1,8 @@
-package com.unibuc.ro.service;
+package com.unibuc.ro.service.security;
 
 import com.unibuc.ro.model.Authority;
 import com.unibuc.ro.model.Client;
-import com.unibuc.ro.repository.ClientRepository;
+import com.unibuc.ro.repository.security.ClientRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.GrantedAuthority;

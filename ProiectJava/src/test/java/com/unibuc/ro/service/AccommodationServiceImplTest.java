@@ -3,16 +3,15 @@ package com.unibuc.ro.service;
 import com.unibuc.ro.model.Accommodation;
 import com.unibuc.ro.model.AccommodationType;
 import com.unibuc.ro.model.Destination;
-import com.unibuc.ro.model.Holiday;
 import com.unibuc.ro.repository.AccommodationRepository;
 import com.unibuc.ro.repository.DestinationRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class AccommodationServiceTest {
+class AccommodationServiceImplTest {
     @InjectMocks
     private AccommodationServiceImpl accommodationService;
     @Mock
@@ -117,5 +116,25 @@ class AccommodationServiceTest {
         }catch(Exception e) {
             assertEquals("Accommodation with id 1 not found!",e.getMessage());
         }
+    }
+
+    @Test
+    void findAllByDestinationSorted() {
+        //prepare
+        Destination destination = new Destination("Maldive");
+        Accommodation accommodation = new Accommodation(AccommodationType.HOTEL, "Alegria",
+                180l, "14:00", "10:00", 300,
+                destination);
+        Accommodation accommodation1 = accommodationService.save(new Accommodation(AccommodationType.HOTEL, "Meeru",
+                160l, "14:00", "10:00", 150,
+                destination));
+        List<Accommodation> accommodations = List.of(accommodation, accommodation1);
+        when(destinationRepository.findByDestinationName("Maldive")).thenReturn(Optional.of(destination));
+        when(accommodationRepository.findAllByDestination("Maldive")).thenReturn(accommodations);
+        //act
+        List<Accommodation> accommodationList = accommodationService.findAllByDestination("Maldive");
+        //assert
+        assertEquals(accommodation, accommodationList.get(0));
+        assertEquals(accommodation.getName(), accommodationList.get(0).getName());
     }
 }

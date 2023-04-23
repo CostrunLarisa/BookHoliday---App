@@ -2,11 +2,15 @@ package com.unibuc.ro.service;
 
 import com.unibuc.ro.model.*;
 import com.unibuc.ro.repository.*;
+import com.unibuc.ro.repository.security.ClientRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,18 +35,41 @@ class HolidayServiceImplTest {
     private ClientRepository clientRepository;
     @Mock
     private DestinationRepository destinationRepository;
-// TODO:
-//    @Test
-//    void saveByInexistentClientAndDest() {
-//        when(clientRepository.findById(1l)).thenReturn(Optional.empty());
-//        try {
-//            holidayService.saveByClientAndDest(2l, 1l, new HolidayRequest());
-//        } catch (Exception e) {
-//            assertEquals("The client with the provided username and password does not exist or is not registered.", e.getMessage());
-//        }
-//    }
+    @Mock
+    private Authentication authentication;
+    @Mock
+    private SecurityContextHolder securityContextHolder;
+    @Mock
+    private SecurityContext securityContext;
+    @Test
+    void updateByIdAndPastDate() {
+        Holiday mockHoliday = new Holiday();
+        Destination destination = new Destination("Maldive");
+        mockHoliday.setDestination(destination);
+        mockHoliday.setClient(new Client());
+        when(holidayRepository.findById(any())).thenReturn(Optional.of(mockHoliday));
+        try {
+            holidayService.updateById(2l, new HolidayRequest("2023-03-02", "2023-03-10"));
+        } catch (Exception e) {
+            assertEquals("Holiday has the first day in the past so it cannot be modified, added or cancelled!", e.getMessage());
+        }
+    }
 
-//    @Test
+    @Test
+    void updateByIdAndFirstDayGreater() {
+        Holiday mockHoliday = new Holiday();
+        Destination destination = new Destination("Maldive");
+        mockHoliday.setDestination(destination);
+        mockHoliday.setClient(new Client());
+        when(holidayRepository.findById(any())).thenReturn(Optional.of(mockHoliday));
+        try {
+            holidayService.updateById(2l, new HolidayRequest("2023-05-02", "2023-04-10"));
+        } catch (Exception e) {
+            assertEquals("Holiday has the first day in the past so it cannot be modified, added or cancelled!", e.getMessage());
+        }
+    }
+
+    //    @Test
 //    void saveByClientAndInexistentDest() {
 //        when(clientRepository.findById(1l)).thenReturn(Optional.of(new Client()));
 //        when(destinationRepository.findById(2l)).thenReturn(Optional.empty());
@@ -52,33 +79,59 @@ class HolidayServiceImplTest {
 //            assertEquals("Destination with id 2 does not exist!", e.getMessage());
 //        }
 //    }
-// TODO:
+    @Test
+    void saveByClientAndDestClientNotRegistered() {
+        try {
+            Holiday holiday = holidayService.saveByClientAndDest("Maldive");
+        } catch (Exception e) {
+            assertEquals("The client with the provided username and password does not exist or is not registered.", e.getMessage());
+        }
+    }
+
 //    @Test
-//    void saveByClientAndDest() {
-//        when(clientRepository.findById(1l)).thenReturn(Optional.of(new Client()));
-//        when(destinationRepository.findById(2l)).thenReturn(Optional.of(new Destination()));
+//    void saveByClientAndDestClient() {
+//       // when(securityContextHolder.getContext()).thenReturn(securityContext);
+//        when(securityContext.getAuthentication()).thenReturn(authentication);
+//        when(clientRepository.findClientByEmail(anyString())).thenReturn(Optional.of(new Client()));
+//       // when(destinationRepository.findById(2l)).thenReturn(Optional.of(new Destination()));
 //
-//        Holiday holiday = holidayService.saveByClientAndDest(2l, 1l, new HolidayRequest());
+//        Holiday holiday = holidayService.saveByClientAndDest("Maldive");
 //        verify(holidayRepository, times(1)).save(any());
 //    }
 
-    // TODO:
+    @Test
+    void cancelHoliday() {
+        Holiday holiday = new Holiday();
+        Destination destination = new Destination("Maldive");
+        Accommodation accommodation = new Accommodation(1l, AccommodationType.HOTEL, "Alegria",
+                180l, "14:00", "10:00", 300,
+                destination);
+        holiday.setAccommodation(accommodation);
+        when(holidayRepository.findById(1l)).thenReturn(Optional.of(holiday));
+        when(accommodationRepository.findById(any())).thenReturn(Optional.of(accommodation));
+        holidayService.cancelHoliday(1l);
+        verify(holidayRepository, times(1)).save(holiday);
 
-//    @Test
-//    void cancelHoliday() {
-//        Holiday holiday = new Holiday();
-//        Destination destination = new Destination("Maldive");
-//        Accommodation accommodation = new Accommodation(1l, AccommodationType.HOTEL, "Alegria",
-//                180l, "14:00", "10:00", 300,
-//                destination);
-//        holiday.setAccommodation(accommodation);
-//        when(holidayRepository.findById(1l)).thenReturn(Optional.of(holiday));
-//        when(accommodationRepository.findById(any())).thenReturn(Optional.of(accommodation));
-//        holidayService.cancelHoliday(1l);
-//        verify(holidayRepository, times(1)).save(holiday);
-//
-//        verify(accommodationRepository, times(1)).save(any());
-//    }
+        verify(accommodationRepository, times(1)).save(any());
+    }
+    @Test
+    void cancelHolidayPastDate() throws ParseException {
+        Holiday holiday = new Holiday();
+        Destination destination = new Destination("Maldive");
+        Accommodation accommodation = new Accommodation(1l, AccommodationType.HOTEL, "Alegria",
+                180l, "14:00", "10:00", 300,
+                destination);
+        holiday.setAccommodation(accommodation);
+        holiday.setFirstDay(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2023-04-01 00:00:00"));
+        when(holidayRepository.findById(1l)).thenReturn(Optional.of(holiday));
+        try {
+            holidayService.cancelHoliday(1l);
+        } catch(Exception e) {
+            assertEquals("Holiday has the first day in the past so it cannot be modified, added or cancelled!", e.getMessage());
+            verify(holidayRepository, never()).save(holiday);
+            verify(accommodationRepository, never()).save(any());
+        }
+    }
 
     @Test
     void cancelInvalidHoliday() {
@@ -141,6 +194,7 @@ class HolidayServiceImplTest {
         Accommodation accommodation = new Accommodation(1l, AccommodationType.HOTEL, "Alegria",
                 180l, "14:00", "10:00", 300,
                 destination);
+        holiday.setDestination(destination);
         when(accommodationRepository.findById(1l)).thenReturn(Optional.of(accommodation));
         when(holidayRepository.findById(2l)).thenReturn(Optional.of(holiday));
         //act
@@ -198,15 +252,6 @@ class HolidayServiceImplTest {
 
     //TODO
 
-//    @Test
-//    void findAllByInexistentClient() {
-//        when(clientRepository.findById(1l)).thenReturn(Optional.empty());
-//        try {
-//            holidayService.findAllByClient(1l);
-//        } catch (Exception e) {
-//            assertEquals("The client with the provided username and password does not exist or is not registered.", e.getMessage());
-//        }
-//    }
 
     @Test
     void deleteAccommodation() {
@@ -240,6 +285,7 @@ class HolidayServiceImplTest {
             assertEquals("Accommodation with id 1 not found!", e.getMessage());
         }
     }
+
     @Test
     void deleteUnsetAccommodation() {
         Holiday holiday = new Holiday();
@@ -247,7 +293,7 @@ class HolidayServiceImplTest {
         try {
             Holiday holiday2 = holidayService.deleteAccommodation(1l);
         } catch (Exception e) {
-            assertEquals("Accommodation with id 1 does not exist!", e.getMessage());
+            assertEquals("The holiday does not have an accommodation!", e.getMessage());
         }
     }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Login</title>
+    <title>Destinations</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css"/>
     <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -96,20 +96,11 @@
                     <td th:text="${destination.destinationName}">Product 1</td>
                     <td><a th:href="@{'/accommodations/priceList/' + ${destination.destinationName}}">See Accommodations</a></td>
                     <td><a th:href="@{'/flights/flightsPaginated/' + ${destination.destinationName}}">See Flights</a></td>
-                    <!--                    <td th:text="${product.reservePrice}">Best offer</td>-->
-                    <!--                    <td><a href="#" th:href="@{'/products/' + ${product.id}}"><i class="fa-solid fa-circle-info"></i></a></td>-->
                     <td>
                         <form th:action="@{/holidays/add(session = ${#httpSession.id}, destinationName=${destination.destinationName})}" method="post">
                             <button type="submit" class="btn btn-success">Book a Holiday</button>
                         </form>
                     </td>
-<!--                    <form method="post" action="@{'/holiday/add?destinationName='${destination.destinationName}}">-->
-<!--                        <input type="hidden" name="destinationName" th:value="${destination.destinationName}" />-->
-<!--                        <button type="submit">Add Holiday</button>-->
-<!--                    </form>-->
-
-                    <!--                                        <td><a sec:authorize="hasRole('ADMIN')"  href="#" th:href="@{'/destinations/add' + ${product.id}}"><i class="fa-solid fa-pen"></i></a></td>
-                                          <td><a href="#" th:href="@{'/products/delete/' + ${product.id}}"><i class="fa-solid fa-trash"></i></a></td>-->
                 </tr>
             </table>
             <form th:action="@{/destinations/add}" method="post" sec:authorize="hasRole('ADMIN')" style="width: 30%">
@@ -120,18 +111,6 @@
                 <button class="btn btn-success" type="submit">Add New Destination</button>
             </form>
         </div>
-        <!--        <form th:action="@{/login}" method="post">-->
-        <!--            <div class="form-group">-->
-        <!--                <label for="username">Username:</label>-->
-        <!--                <input type="text" class="form-control" id="username" name="username" required>-->
-        <!--            </div>-->
-        <!--            <div class="form-group">-->
-        <!--                <label for="password">Password:</label>-->
-        <!--                <input type="password" class="form-control" id="password" name="password" required>-->
-        <!--            </div>-->
-        <!--            <button type="submit" class="btn btn-success">Log in</button>-->
-        <!--            <span th:if="${param.error}" class="text-danger">Invalid username or password</span>-->
-        <!--        </form>-->
     </div>
 </div>
 

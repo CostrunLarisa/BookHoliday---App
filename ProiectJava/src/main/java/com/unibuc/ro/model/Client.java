@@ -50,7 +50,6 @@ public class Client {
 
     @Builder.Default
     private Boolean credentialsNotExpired = true;
-
     public Client(Long id, String firstName, String lastName, Date birthDate) {
         this.id = id;
         this.firstName = firstName;

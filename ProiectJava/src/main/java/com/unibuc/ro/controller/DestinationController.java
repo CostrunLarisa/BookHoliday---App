@@ -34,14 +34,16 @@ public class DestinationController {
         return ResponseEntity.created(URI.create("/" + destination.getId())).body(destination);
     }
     @PostMapping("/add")
-    public String addDestination(@Valid @ModelAttribute Destination destination, BindingResult bindingResult) {
+    public ModelAndView addDestination(@Valid @ModelAttribute Destination destination, BindingResult bindingResult) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("redirect:/destinations/list");
         if (bindingResult.hasErrors()) {
             LOGGER.debug(bindingResult.getFieldErrors().toString());
-            return "redirect:/destination";
+            return modelAndView;
         }
         destinationService.save(destination);
         LOGGER.info("Destination with id: " + destination.getId() +" was added in the database.");
-        return "redirect:/destination";
+        return modelAndView;
     }
     @GetMapping
     public ResponseEntity<List<Destination>> findAll() {

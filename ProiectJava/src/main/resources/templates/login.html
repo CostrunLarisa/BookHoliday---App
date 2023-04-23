@@ -58,6 +58,8 @@
 <body>
 <div class="container">
     <h1>Login</h1>
+    <p th:if="${successMessage}" style="color: #05818d" th:text="${successMessage}"></p>
+    <p th:if="${errorMessage}" style="color: red" th:text="${errorMessage}"></p>
     <form th:action="@{/}" method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" th:required="true"/>

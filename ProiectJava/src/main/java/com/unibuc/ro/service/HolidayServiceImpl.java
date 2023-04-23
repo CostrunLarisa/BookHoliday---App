@@ -3,17 +3,17 @@ package com.unibuc.ro.service;
 import com.unibuc.ro.exceptions.*;
 import com.unibuc.ro.model.*;
 import com.unibuc.ro.repository.*;
+import com.unibuc.ro.repository.security.ClientRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.*;
 
 @Service
@@ -36,7 +36,7 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
     }
 
     @Override
-    public Holiday saveByClientAndDest(Long id, HolidayRequest holiday) throws ParseException {
+    public Holiday updateById(Long id, HolidayRequest holiday) throws ParseException {
         Holiday holidayFound = this.findById(id);
         Date firstDay = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(holiday.getFirstDay() + " 00:00:00");
         Date endDay = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(holiday.getEndDay() + " 00:00:00");
@@ -170,7 +170,8 @@ public class HolidayServiceImpl extends AbstractService<Holiday> implements Holi
 
     @Override
     public Holiday saveByClientAndDest(String destinationName) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        Authentication auth = securityContext.getAuthentication();
         Optional<Client> client = Optional.empty();
         Optional<Destination> destination;
         Holiday newHoliday = null;

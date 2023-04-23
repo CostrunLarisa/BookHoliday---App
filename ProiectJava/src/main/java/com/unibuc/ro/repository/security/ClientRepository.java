@@ -1,4 +1,4 @@
-package com.unibuc.ro.repository;
+package com.unibuc.ro.repository.security;
 
 import com.unibuc.ro.model.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
