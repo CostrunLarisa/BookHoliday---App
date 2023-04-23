@@ -69,8 +69,8 @@ public class LoginController {
         }
         return "redirect:/";
     }
-//    @PostMapping("/accessDenied")
-//    public String accessDeniedPage(){ return "accessDenied"; }
-//    @GetMapping("/invalidSession")
-//    public String invalidSessionPage(){ return "invalidSession"; }
+    @PostMapping("/accessDenied")
+    public String accessDeniedPage(){ return "accessDenied"; }
+    @GetMapping("/invalidSession")
+    public String invalidSessionPage(){ return "invalidSession"; }
 }
