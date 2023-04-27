@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
 @EntityScan(basePackages = "com.unibuc.ro.model")
-public class ProiectJavaApplication {
+public class ProiectAWBApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(ProiectJavaApplication.class, args);
+        SpringApplication.run(ProiectAWBApplication.class, args);
     }
 
 }

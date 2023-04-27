@@ -31,10 +31,6 @@ public class GeneralExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 
-//    @ExceptionHandler({HolidayAlreadyCancelledException.class})
-//    public ResponseEntity<String> handleCancelledException(HolidayAlreadyCancelledException e) {
-//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-//    }
     @ExceptionHandler({HolidayAlreadyCancelledException.class,
             HolidayCannotBeCancelledException.class,
             AccommodationNotMatchingDestException.class,

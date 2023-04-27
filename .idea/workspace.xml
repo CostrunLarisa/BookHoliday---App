@@ -5,7 +5,110 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05002100-7be6-472c-90a9-4742c442dd95" name="Changes" comment="Added changes.">
-      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/HolidayControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/HolidayControllerIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProiectAWB/Documentatie.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/BootstrapClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/BootstrapClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/DataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/ProiectJavaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/ProiectAWBApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/config/security/MvcConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/config/security/MvcConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/config/security/SimpleSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/config/security/SimpleSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/config/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/config/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/AccommodationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/controller/AccommodationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/DestinationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/controller/DestinationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/controller/FlightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/HolidayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/controller/HolidayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptionHandling/GeneralExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/exceptionHandling/GeneralExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/AccommodationNotMatchingDestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/exceptions/AccommodationNotMatchingDestException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/ClientAlreadyRegisteredException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/exceptions/ClientAlreadyRegisteredException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/ClientNotRegisteredException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/exceptions/ClientNotRegisteredException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/CustomNumberFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/exceptions/CustomNumberFormatException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/DestinationAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/exceptions/DestinationAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/EntityNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/exceptions/EntityNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/HolidayAlreadyCancelledException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/exceptions/HolidayAlreadyCancelledException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/HolidayCannotBeCancelledException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/exceptions/HolidayCannotBeCancelledException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/exceptions/InvalidSessionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/exceptions/InvalidSessionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Accommodation.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/Accommodation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/AccommodationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/AccommodationType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/AirlineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/AirlineType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/Airport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/Authority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/ClientRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/ClientRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/ClientSignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/ClientSignupRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/Destination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/Holiday.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/Holiday.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/model/HolidayRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/model/HolidayRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/AccommodationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/repository/AccommodationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/repository/AddressRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/AirportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/repository/AirportRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/DestinationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/repository/DestinationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/FlightRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/repository/FlightRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/HolidayRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/repository/HolidayRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/security/AuthorityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/repository/security/AuthorityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/repository/security/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/repository/security/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AbstractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/AbstractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AccommodationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/AccommodationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AccommodationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/AccommodationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/AddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AirportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/AirportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/AirportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/AirportServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/ClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/CrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/CrudService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/DestinationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/DestinationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/DestinationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/DestinationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/FlightService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/FlightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/FlightServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/HolidayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/HolidayService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/HolidayServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/HolidayServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/service/security/JpaUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/service/security/JpaUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/application-h2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/application-h2.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/accessDenied.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/accessDenied.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/accommodationsSorted.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/accommodationsSorted.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/defaultException.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/defaultException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/destination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/flightsPaginated.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/flightsPaginated.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/holiday.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/holiday.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/invalidSession.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/invalidSession.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/numberFormatException.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/numberFormatException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/main/resources/templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/BookHolidayApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/BookHolidayApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/AccommodationControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/controller/AccommodationControllerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/ClientControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/controller/ClientControllerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/DestinationControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/controller/DestinationControllerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/FlightControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/controller/FlightControllerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/HolidayControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/controller/HolidayControllerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/HolidayControllerMockMvcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/controller/HolidayControllerMockMvcTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/LoginControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/controller/LoginControllerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/repository/AccommodationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/repository/AccommodationRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/repository/DestinationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/repository/DestinationRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/repository/HolidayRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/repository/HolidayRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/AccommodationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/service/AccommodationServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/AddressServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/service/AddressServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/AirportServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/service/AirportServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/ClientServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/service/ClientServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/DestinationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/service/DestinationServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/EntityManagerPostgresTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/service/EntityManagerPostgresTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/EntityManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/service/EntityManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/FlightServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/service/FlightServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/service/HolidayServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro/service/HolidayServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +189,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ProiectJava" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.unibuc.ro.controller" />
       <recent name="com.unibuc.ro.service" />
@@ -95,24 +201,9 @@
       <recent name="com.unibuc.ro.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HolidayControllerIntegrationTest.testCancelHoliday">
-    <configuration name="DestinationRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProiectJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.unibuc.ro.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.unibuc.ro.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.unibuc.ro.repository.DestinationRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ro in ProiectAWB">
     <configuration name="HolidayControllerIntegrationTest.testCancelHoliday" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProiectJava" />
+      <module name="ProiectAWB" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.unibuc.ro.controller.*" />
@@ -128,7 +219,7 @@
       </method>
     </configuration>
     <configuration name="HolidayRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProiectJava" />
+      <module name="ProiectAWB" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.unibuc.ro.repository.*" />
@@ -143,7 +234,7 @@
       </method>
     </configuration>
     <configuration name="HolidayRepositoryTest.addHoliday" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProiectJava" />
+      <module name="ProiectAWB" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.unibuc.ro.repository.*" />
@@ -158,8 +249,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ro in ProiectAWB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProiectAWB" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/ProiectAWB/src/test/java/com/unibuc/ro" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ro in ProiectJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProiectJava" />
+      <module name="ProiectAWB" />
       <option name="TEST_OBJECT" value="directory" />
       <dir value="$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro" />
       <method v="2">
@@ -167,19 +266,19 @@
       </method>
     </configuration>
     <configuration name="ProiectJavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="ProiectJava" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.unibuc.ro.ProiectJavaApplication" />
+      <module name="ProiectAWB" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.unibuc.ro.ProiectAWBApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ro in ProiectAWB" />
         <item itemvalue="JUnit.HolidayControllerIntegrationTest.testCancelHoliday" />
         <item itemvalue="JUnit.ro in ProiectJava" />
         <item itemvalue="JUnit.HolidayRepositoryTest" />
         <item itemvalue="JUnit.HolidayRepositoryTest.addHoliday" />
-        <item itemvalue="JUnit.DestinationRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -208,7 +307,7 @@
       <workItem from="1682227524787" duration="2283000" />
       <workItem from="1682243866079" duration="10205000" />
       <workItem from="1682258095896" duration="7869000" />
-      <workItem from="1682270088842" duration="10520000" />
+      <workItem from="1682270088842" duration="14523000" />
     </task>
     <task id="LOCAL-00001" summary="Login system added.">
       <created>1681849568935</created>
@@ -259,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682280585697</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added changes.">
+      <created>1682280931732</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682280931732</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,17 +395,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/FlightController.java</url>
+          <url>file://$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/controller/FlightController.java</url>
           <line>36</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ProiectJava/src/test/java/com/unibuc/ro/controller/HolidayControllerIntegrationTest.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/ProiectJava/src/main/java/com/unibuc/ro/controller/DestinationController.java</url>
+          <url>file://$PROJECT_DIR$/ProiectAWB/src/main/java/com/unibuc/ro/controller/DestinationController.java</url>
           <line>36</line>
           <properties class="com.unibuc.ro.controller.DestinationController" method="addDestination">
             <option name="WATCH_EXIT" value="false" />

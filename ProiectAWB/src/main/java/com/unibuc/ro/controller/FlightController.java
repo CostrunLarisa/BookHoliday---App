@@ -55,7 +55,7 @@ public class FlightController {
     }
 
     @GetMapping("/flightsPaginated/{destinationName}")
-    public ModelAndView getMoviePage(ModelAndView model,
+    public ModelAndView getFlightPage(ModelAndView model,
                                @RequestParam("size") Optional<Integer> size,
                                @RequestParam("page") Optional<Integer> page,
                                @PathVariable String destinationName) {

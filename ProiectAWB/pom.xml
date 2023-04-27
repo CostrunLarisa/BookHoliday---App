@@ -9,11 +9,8 @@
     </parent>
 
     <groupId>com.unibuc.ro</groupId>
-    <artifactId>ProiectJava</artifactId>
+    <artifactId>ProiectAWB</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ProiectJava</name>
-    <description>ProiectJava</description>
-
     <properties>
         <java.version>11</java.version>
         <maven.compiler.source>11</maven.compiler.source>
